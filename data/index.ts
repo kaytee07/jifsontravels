@@ -49,17 +49,21 @@ export const packages = [
     {
         name: "Fabolous Dubai",
         price: "900",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case."
+        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
+        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         name: "Falls Waterfall",
         price: "1900",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case."
+        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
+        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         name: "Summer Mountains",
         price: "1200",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case."
+        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
+        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
 ]
+
 

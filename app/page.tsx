@@ -1,4 +1,5 @@
 import Explore from "@/components/Explore";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Popular from "@/components/Popular";
@@ -13,6 +14,7 @@ export default function Home() {
       <Services/>
       <Explore/>
       <Popular/>
+      <Footer/>
     </main>
   );
 }

@@ -12,10 +12,10 @@ const Popular = () => {
         <div className="w-[95%]  flex max-md:flex-col max-md:items-center justify-center gap-10">
              {packages.map((data, i) => (
                 <div key={i}>
-                 <div className="relative flex max-w-[24rem] md:max-w-[17rem] flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+                 <div className="relative flex max-w-[28rem] max-md:max-w-[17rem] flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
                     ` <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96">
                         <img
-                        src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
+                        src={data.img}
                         alt="card-image" className="object-cover w-full h-full" />
                     </div>
                     <div className="p-6">
@@ -23,9 +23,17 @@ const Popular = () => {
                         <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
                             {data.name}
                         </p>
+                        <div>
                         <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
                             ${data.price}
                         </p>
+                        </div>
+                        </div>
+                        <div className="flex justify-between">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                            <p className="block font-sans text-sm antialiased font-normal leading-normal text-orange-500 opacity-75">
+                                January 7 - January 9
+                            </p>
                         </div>
                         <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
                         {data.desc}
