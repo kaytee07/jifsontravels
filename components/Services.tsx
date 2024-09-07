@@ -3,7 +3,7 @@ import React from 'react'
 const Services = () => {
   return (
     <div className="flex flex-col justify-center">
-        <h4 className="text-center mt-7 text-lg font-bold">Our Services</h4>
+        <h4 className="text-center mt-7 text-lg font-bold  ">Our Services</h4>
         <div className="details max-md:gap-4 max-md:flex-col max-md:items-center w-[95%] justify-center flex flex-wrap mt-9">       
             <div className="flex flex-col gap-3 w-[17rem]">
                 <div className="flex justify-center">

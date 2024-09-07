@@ -2,16 +2,13 @@ import React from 'react'
 import { Button } from './ui/button'
 import { packages } from '@/data'
 
-const Popular = () => {
+const PackagePopular = () => {
   return (
-     <div className="w-full flex flex-col  items-center my-12 pt-8 ">
-        <h4 className="text-xl font-bold tracking-tight text-center mx-9 text-[#142d52]">
-            Tour Packages
-        </h4>
-        <div className="w-[95%]  flex max-md:flex-col max-md:items-center justify-center gap-10">
-             {packages.slice(0, 3).map((data, i) => (
-                <div key={i}>
-                 <div className="relative flex max-w-[28rem] max-md:max-w-[24rem] flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+     <div className="w-full flex justify-center my-12 pt-8 ">
+        
+        <div className="w-[95%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
+             {packages.map((data, i) => (
+                 <div key={i} className="relative flex max-w-[28rem] max-md:max-w-[24rem] flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
                     ` <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96">
                         <img
                         src={data.img}
@@ -24,7 +21,7 @@ const Popular = () => {
                         </p>
                         <div>
                         <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-                            ${data.price}
+                            ${data.price} / Person
                         </p>
                         </div>
                         </div>
@@ -45,15 +42,12 @@ const Popular = () => {
                         Book Now
                         </button>`
                  </div>
-                </div>
-                
-            </div>       
+                </div>       
             ))}
             
         </div>
-        <Button className="my-10 w-32">View More</Button>
     </div>
   )
 }
 
-export default Popular
+export default PackagePopular
