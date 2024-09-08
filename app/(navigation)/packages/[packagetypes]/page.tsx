@@ -9,7 +9,7 @@ interface Itinerary {
   day3: string;
   day4: string;
   day5: string
-}
+}[]
 
 interface TourPackage {
   name: string;
@@ -24,7 +24,8 @@ interface packageDetails {
 }
 
 const PackageType = ({params}: {params: {packagetypes: string}}) => {
-  let tourType: TourPackage | undefined = packageDetails[params.packagetypes as keyof typeof packageDetails]
+  let tourType = packageDetails[params.packagetypes as keyof typeof packageDetails]
+  
   return (
     <main>
       <TourHero name={tourType.name} url={tourType.imgUrl}/>
