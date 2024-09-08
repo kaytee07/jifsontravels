@@ -29,8 +29,8 @@ const Popular = () => {
                         </div>
                         </div>
                         <div className="flex justify-between">
-                            <svg xmlns="http://www.w3.org/2000/svg" color="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                            <p className="block font-sans text-sm antialiased font-normal leading-normal text-orange-500 opacity-75">
+                            <svg xmlns="http://www.w3.org/2000/svg" color="#ff8041" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                            <p className="block font-sans text-sm antialiased font-normal leading-normal text-[#ff8041] opacity-75">
                                 January 7 - January 9
                             </p>
                         </div>
@@ -40,9 +40,11 @@ const Popular = () => {
                     </div>
                     <div className="p-6 pt-0">
                         <button
-                        className="align-middle select-none bg-[#e9eaeb] font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+                        className="align-middle select-none bg-[#ff8041] font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
                         type="button">
-                        Book Now
+                            <a href={`/packages/${data.name.replace(/\s+/g, '').toLowerCase()}`}>
+                                Book Now
+                            </a>
                         </button>`
                  </div>
                 </div>
@@ -51,7 +53,9 @@ const Popular = () => {
             ))}
             
         </div>
+        <a href="/packages">
         <Button className="my-10 w-32">View More</Button>
+        </a>
     </div>
   )
 }

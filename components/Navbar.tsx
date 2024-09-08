@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <header className='flex flex-row justify-between py-4 px-10'>
         <div className="logo">
+            <a href='/'>
             <h2>JifsonJoyTravels</h2>
+            </a>
         </div>
         <nav 
         className="flex justify-between text-sm font-md max-md:hidden" 
