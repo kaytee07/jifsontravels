@@ -56,8 +56,8 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                 </div>
                 <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'}`}>
                     {iti.map((dayObject, i) => {
-                        const dayKey = Object.keys(dayObject)[0];
-                        const dayValue = dayObject[dayKey];
+                        const dayKey = `Day ${i}`;
+                        const dayValue = dayObject;
                         return (
                             <div key={i}>
                                 <h2>{dayKey}</h2>
