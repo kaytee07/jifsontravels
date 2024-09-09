@@ -11,13 +11,15 @@ const Navbar = () => {
             </a>
         </div>
         <nav 
-        className="flex justify-between text-sm font-md max-md:hidden" 
+        className="flex justify-between h-[2rem] text-sm font-md max-md:hidden" 
         style={{"width": "32rem", }}>
             <ul 
             className='flex flex-row justify-between items-center' 
             style={{"width": "30rem"}}>
                 {navigation.map((data, i) => (
-                    <a key={i} href={data.url}><li className="navitems" >{data.name}</li></a>
+                    <a key={i} className="w-[6rem]" href={data.url}>
+                        <li className="navitems flex items-center justify-center hover:h-[1.7rem] hover:w-[5rem] hover:rounded-sm hover:bg-[#f1a47d] " >{data.name}</li>
+                    </a>
                 )
                 )}
                 
