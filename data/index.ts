@@ -1,3 +1,5 @@
+import { title } from "process"
+
 export const navigation = [ 
     {
         name: "About us",
@@ -194,6 +196,41 @@ export const testimonials = [
         test: "I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!",
         imgUrl: "https://images.unsplash.com/photo-1672863601285-253fc82db868?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
+]
+
+export const services = [
+    {
+        title: "Tour Guide",
+        desc:"gravida sapien. Donec nulla ex, semper ac massa ullamcorper, pretium viverra orci. Morbi ut elit sit amet sapien porta elementum. Nullam nec odio orci."
+    },
+    {
+        title: "24/7 Transport Service",
+        desc:"Explore at your own pace with 24/7 transport availability, giving you the freedom to travel whenever and wherever you like."
+    },
+    {
+        title: "High-Quality Photos & Videos",
+        desc:"Relive your best moments with professionally captured high-quality photos and videos included in your travel package."
+    },
+    {
+        title: "Airport Pickup & Dropoff",
+        desc:"We provide reliable and timely airport pickup and dropoff services, ensuring you arrive and depart with ease and comfort."
+    },
+   
+    {
+        title: "Support24/7 Onsite Support",
+        desc:"Our team is available around the clock to offer 24/7 onsite support, ensuring you have assistance whenever you need it."
+    },
+]
+
+export const aboutus = [
+        {
+            title: "Mission",
+            desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt vitae metus ac cursus. Fusce nulla est, posuere eget aliquam in, eleifend non est. Donec efficitur pellentesque lacus quis auctor. Duis in gravida sapien. Donec nulla ex, semper ac massa ullamcorper, pretium viverra orci. Morbi ut elit sit amet sapien porta elementum. Nullam nec odio orci."
+        },
+        {
+            title: "Vision",
+            desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt vitae metus ac cursus. Fusce nulla est, posuere eget aliquam in, eleifend non est. Donec efficitur pellentesque lacus quis auctor. Duis in gravida sapien. Donec nulla ex, semper ac massa ullamcorper, pretium viverra orci. Morbi ut elit sit amet sapien porta elementum. Nullam nec odio orci."
+        }
 ]
 
 
