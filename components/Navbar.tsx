@@ -15,19 +15,21 @@ const Navbar = () => {
         style={{"width": "32rem", }}>
             <ul 
             className='flex flex-row justify-between items-center' 
-            style={{"width": "20rem"}}>
-                {navigation.map((data, i) => (<li className="navitems" key={i}>{data.name}</li>)
+            style={{"width": "30rem"}}>
+                {navigation.map((data, i) => (
+                    <a key={i} href={data.url}><li className="navitems" >{data.name}</li></a>
+                )
                 )}
                 
             </ul>
-            <div className='flex justify-around w-40'>
+            {/* <div className='flex justify-around w-40'>
                 <button className="border border-1 border-black rounded-lg py-1.5 px-1.5">
                     Sign in
                 </button>
                 <button className="border bg-black border-black rounded-lg py-1.5 px-1.5 text-white">
                     Sign up
                 </button>
-            </div>    
+            </div>     */}
         </nav>
          <div className="md:hidden">
             <SheetDemo/>

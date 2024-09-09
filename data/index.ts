@@ -1,15 +1,23 @@
 export const navigation = [ 
     {
-        name: "packages",
-        url:"/packages"
-    },
-    {
-        name: "about us",
+        name: "About us",
         url:"/aboutus"
     },
     {
-        name: "contact us",
+        name: "Services",
+        url:"/services"
+    },
+    {
+        name: "Packages",
+        url:"/packages"
+    },
+        {
+        name: "Contact us",
         url:"/contactus"
+    },
+        {
+        name: "Gallery",
+        url:"/gallery"
     },
 ]
 
@@ -169,5 +177,23 @@ export const packageDetails = {
         gallery:[]
     }
 }
+
+export const testimonials = [
+    {
+        name: "Mariama Lin",
+        test: "I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!",
+        imgUrl: "https://images.unsplash.com/photo-1687360440741-f5df549b352d?q=80&w=1399&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        name: "Charles muni",
+        test: "I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!",
+        imgUrl: "https://images.unsplash.com/photo-1711000142551-ca65827c57c3?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        name: "Jeff Agrey",
+        test: "I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!",
+        imgUrl: "https://images.unsplash.com/photo-1672863601285-253fc82db868?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+]
 
 

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Popular from "@/components/Popular";
 import Services from "@/components/Services";
+import Testionials from "@/components/Testimonials";
 import Image from "next/image";
 
 export default function Home() {
@@ -11,9 +12,10 @@ export default function Home() {
     <main>
       <Navbar/>
       <Hero/>
-      <Services/>
-      <Explore/>
-      <Popular/>
+      {/* <Services/>
+      <Explore/> */}
+      {/* <Popular/> */}
+      <Testionials/>
       <Footer/>
     </main>
   );

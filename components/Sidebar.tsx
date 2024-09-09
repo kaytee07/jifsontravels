@@ -48,24 +48,17 @@ export function SheetDemo() {
             {/* Make changes to your profile here. Click save when you're done. */}
           </SheetDescription>
         </SheetHeader>
-        <div className="grid gap-4 py-4">
-         <ul>
+        <div className="gap-4 py-4 flex h-[24rem]">
+         <ul className="flex flex-col justify-around">
         {
             navigation.map((data, i) => (
-            <li className="navitems py-3 hover:rounded-sm hover:bg-slate-200 px-2" key={i}>{data.name}</li>)
+            <a key={i} href={data.url}><li className="navitems" >{data.name}</li></a>
+          )
         )
         }
         
          </ul>
         </div>
-           <div className='flex  justify-around border-t-2 py-5 border-slate-400 gap-5 flex-col'>
-                <button className="border border-1 border-black rounded-lg w-24 py-1.5 px-1.5">
-                    Sign in
-                </button>
-                <button className="border bg-black border-black rounded-lg w-24 py-1.5 px-1.5 text-white">
-                    Sign up
-                </button>
-            </div> 
       </SheetContent>
     </Sheet>
   )
