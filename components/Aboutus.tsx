@@ -3,7 +3,7 @@ import React from 'react'
 
 const Aboutus = () => {
   return (
-       <div className="flex flex-col justify-center items-center">
+       <div className="flex flex-col justify-center items-center h-auto">
         <h4 className="className mt-7 text-lg text-center font-bold  ">About us</h4>
         <div className="details gap-4 backdrop: flex-col items-center w-[80%] justify-center mb-10 flex flex-wrap">
     {
