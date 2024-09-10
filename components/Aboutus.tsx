@@ -11,7 +11,7 @@ const Aboutus = () => {
          <div className="flex gap-3 " key={i}>
                 <div>
                     <h4 className="className font-bold text-xl mt-1">{data.title}</h4>
-                    <p className="leading-7 text-lg text-black justify-center className [&:not(:first-child)]:mt-0">
+                    <p className="leading-7 text-lg text-black justify-center text-justify className [&:not(:first-child)]:mt-0">
                         {data.desc}
                     </p>
                 </div>

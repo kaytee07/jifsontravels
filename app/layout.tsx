@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Damion } from "next/font/google";
+import { Inter, Damion, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -8,6 +8,7 @@ const damion = Damion({
   weight: '400',
   subsets: ['latin'],
 });
+
 
 export const metadata: Metadata = {
   title: "JifsonJoyTravels",

@@ -1,5 +1,11 @@
 import React from 'react'
 import { Button } from './ui/button'
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({
+  weight: ['400', '700'], 
+  subsets: ['latin'],
+});
 
 const Hero = () => {
   return (
@@ -14,13 +20,13 @@ const Hero = () => {
     }} 
     >
        
-         <h1 className="text-center italic scroll-m-20 text-4xl font-damion animate-fadeIn text-black font-bold tracking-tight ">
+         <h1 className={`text-center scroll-m-20 text-4xl ${montserrat.className} animate-fadeIn text-white font-bold tracking-tight`}>
           A Trip To 
         </h1>
-        <h1 className="text-center italic scroll-m-20 text-5xl font-damion animate-slideIn text-black font-bold tracking-tight">Ghana</h1>
+        <h1 className={`text-center  scroll-m-20 text-5xl ${montserrat.className} animate-slideIn text-white font-bold tracking-tight`}>Ghana</h1>
         <div className="buttons flex  justify-center gap-2">
-          <Button className="bg-[#ff8041]">Sign in</Button>
-          <Button className="bg-[#ff8041]">Sign up</Button>
+          <Button className="border-white bg-[transparent] border-2">Sign in</Button>
+          <Button className="border-white bg-[transparent] border-2">Sign up</Button>
         </div>
     </div>
     </div>

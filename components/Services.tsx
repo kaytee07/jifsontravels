@@ -11,7 +11,7 @@ const Services = () => {
          <div className="flex gap-3 " key={i}>
                 <div>
                     <h4 className="className text-lg font-bold mt-1">{data.title}</h4>
-                    <p className="leading-7 text-md text-black justify-center className [&:not(:first-child)]:mt-0">
+                    <p className="leading-7 text-md text-black text-justify justify-center className [&:not(:first-child)]:mt-0">
                         {data.desc}
                     </p>
                 </div>

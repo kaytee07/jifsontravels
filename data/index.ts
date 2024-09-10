@@ -182,18 +182,18 @@ export const packageDetails = {
 
 export const testimonials = [
     {
-        name: "Mariama Lin",
-        test: "I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!",
+        name: "Mariam Sam",
+        test: "I’ve traveled with a lot of tour companies, but this one stands out. The itinerary was perfectly planned, and our guide made sure we had the best experience. From local food spots to breathtaking views, every detail was thoughtfully arranged. I’ll definitely book with them again!",
         imgUrl: "https://images.unsplash.com/photo-1687360440741-f5df549b352d?q=80&w=1399&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-        name: "Charles muni",
-        test: "I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!",
+        name: "Charles Loe",
+        test: "I can't say enough good things about the service and our guide! We felt like we were exploring with a local friend. Every recommendation—from restaurants to hidden gems—was spot on. If you’re looking for a well-rounded, fun, and informative tour, this is the company to go with.",
         imgUrl: "https://images.unsplash.com/photo-1711000142551-ca65827c57c3?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         name: "Jeff Agrey",
-        test: "I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!",
+        test: "Incredible experience! Our guide was so knowledgeable and really brought the culture and history of the city to life. They took us to places we never would have found on our own. Highly recommend for anyone looking for a unique and unforgettable adventure!",
         imgUrl: "https://images.unsplash.com/photo-1672863601285-253fc82db868?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
 ]
@@ -201,7 +201,7 @@ export const testimonials = [
 export const services = [
     {
         title: "Tour Guide",
-        desc:"gravida sapien. Donec nulla ex, semper ac massa ullamcorper, pretium viverra orci. Morbi ut elit sit amet sapien porta elementum. Nullam nec odio orci."
+        desc:"Explore the world with our experienced tour guides who bring each destination to life. From hidden gems to local culture, our guides offer personalized insights and tips to make your journey memorable. Let us show you the best of every location with passion and expertise."
     },
     {
         title: "24/7 Transport Service",

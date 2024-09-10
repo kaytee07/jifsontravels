@@ -1,11 +1,9 @@
-import Explore from "@/components/Explore";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Popular from "@/components/Popular";
-import Services from "@/components/Services";
 import Testionials from "@/components/Testimonials";
-import Image from "next/image";
+import { Montserrat } from 'next/font/google';
+
 
 export default function Home() {
   return (

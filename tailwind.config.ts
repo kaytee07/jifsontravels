@@ -1,3 +1,4 @@
+import { Montserrat } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 
@@ -16,7 +17,7 @@ const config: Config = {
           		'100%': { opacity: '1' },
 			},
 			 slideIn: {
-				'0%': { transform: 'translateX(-100%)', opacity: '0' },
+				'0%': { transform: 'translateX(-30%)', opacity: '1' },
 				'100%': { transform: 'translateX(0)', opacity: '1' },
         	}
 		},
@@ -25,7 +26,7 @@ const config: Config = {
 		slideIn: 'slideIn 2s ease-in-out'
       },
 	  fontFamily:{
-		damion: ['Damion', 'cursive'],
+		montserrat: ['Montserrat', 'sans-serif']
 	  },
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
