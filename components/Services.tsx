@@ -4,7 +4,7 @@ import React from 'react'
 const Services = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-        <h4 className="className mt-7 text-lg text-center font-bold  ">Our Services</h4>
+        <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">Our Services</h2>
         <div className="details gap-4 backdrop: flex-col w-[80%] justify-center mb-10 flex flex-wrap">
     {
      services.map((data, i) => (
