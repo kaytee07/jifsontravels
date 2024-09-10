@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -9,6 +10,20 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		keyframes:{
+			fadeIn:{
+				'0%': { opacity: '0' },
+          		'100%': { opacity: '1' },
+			},
+			 slideIn: {
+				'0%': { transform: 'translateX(-100%)', opacity: '0' },
+				'100%': { transform: 'translateX(0)', opacity: '1' },
+        	}
+		},
+		 animation: {
+        fadeIn: 'fadeIn 2s ease-in-out',
+		slideIn: 'slideIn 3s ease-in-out'
+      },
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
@@ -62,6 +77,6 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 };
 export default config;

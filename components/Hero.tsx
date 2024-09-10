@@ -14,9 +14,10 @@ const Hero = () => {
     }} 
     >
        
-         <h1 className="text-center scroll-m-20 text-4xl text-white font-bold tracking-tight lg:text-4xl">
-          A Trip To Ghana  
+         <h1 className="text-center scroll-m-20 text-4xl animate-fadeIn text-black font-bold tracking-tight lg:text-4xl">
+          A Trip To 
         </h1>
+        <h1 className="text-center scroll-m-20 text-4xl animate-slideIn text-black font-bold tracking-tight lg:text-4xl">Ghana</h1>
         <div className="buttons flex  justify-center gap-2">
           <Button className="bg-[#ff8041]">Sign in</Button>
           <Button className="bg-[#ff8041]">Sign up</Button>
