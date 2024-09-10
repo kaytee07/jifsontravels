@@ -21,9 +21,12 @@ const config: Config = {
         	}
 		},
 		 animation: {
-        fadeIn: 'fadeIn 2s ease-in-out',
-		slideIn: 'slideIn 3s ease-in-out'
+        fadeIn: 'fadeIn 1s ease-in-out',
+		slideIn: 'slideIn 2s ease-in-out'
       },
+	  fontFamily:{
+		damion: ['Damion', 'cursive'],
+	  },
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
