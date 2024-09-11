@@ -12,6 +12,9 @@ const damion = Damion({
 
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/logos/logo2.png"
+  },
   title: "JifsonJoyTravels",
   description: "Travel around Ghana with us",
 };
