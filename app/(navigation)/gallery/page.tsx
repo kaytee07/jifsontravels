@@ -7,7 +7,7 @@ const Gallery = () => {
       {
         gallery.map((data, i)=> (
                 <div key={i}>
-                  <img className="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                  <img className="object-cover object-center w-full h-64 max-w-full rounded-lg"
                     src={data}
                     alt="gallery-photo" />
               </div>
