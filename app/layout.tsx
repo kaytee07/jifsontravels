@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Damion, Montserrat } from "next/font/google";
+import Head from "next/head";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/logos/logo2.png" />
+      <Head>
+        <link rel="icon" href="/logos/logo2.png" />
+      </Head>
+      
       <body className={`${inter.className}`}>{children}</body>
     </html>
   );
