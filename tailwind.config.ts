@@ -23,7 +23,7 @@ const config: Config = {
 		},
 		 animation: {
         fadeIn: 'fadeIn 1s ease-in-out',
-		slideIn: 'slideIn 2s ease-in-out'
+		slideIn: 'slideIn 1s ease-in-out'
       },
 	  fontFamily:{
 		montserrat: ['Montserrat', 'sans-serif']

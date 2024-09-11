@@ -1,13 +1,14 @@
 import React from 'react' 
 import { SheetDemo } from './Sidebar'
 import { navigation } from '@/data'
+import Image from 'next/image'
 
 const Navbar = () => {
   return (
     <header className='flex flex-row justify-between py-4 px-10'>
         <div className="logo">
-            <a href='/'>
-            <h2>JifsonJoyTravels</h2>
+            <a href="/">
+                <Image src="/logos/Logo.png" width={70} height={40} alt="logo"/>
             </a>
         </div>
         <nav 
@@ -18,7 +19,7 @@ const Navbar = () => {
             style={{"width": "30rem"}}>
                 {navigation.map((data, i) => (
                     <a key={i} className="w-[6rem]" href={data.url}>
-                        <li className="navitems flex items-center justify-center hover:h-[1.7rem] hover:w-[5rem] hover:rounded-sm hover:bg-[#f1a47d] " >{data.name}</li>
+                        <li className="navitems flex items-center justify-center hover:border-b-2 hover:border-[#e8bd3b] text-[#317670]" >{data.name}</li>
                     </a>
                 )
                 )}

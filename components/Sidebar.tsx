@@ -12,6 +12,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { navigation } from "@/data"
+import Image from "next/image"
 
 export function SheetDemo() {
   return (
@@ -43,7 +44,9 @@ export function SheetDemo() {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>JifsonJoyTravels</SheetTitle>
+          <SheetTitle>
+            <Image src="/logos/Logo.png" width={70} height={40} alt="logo"/>
+            </SheetTitle>
           <SheetDescription>
             {/* Make changes to your profile here. Click save when you're done. */}
           </SheetDescription>
