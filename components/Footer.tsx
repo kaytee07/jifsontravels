@@ -1,17 +1,17 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Footer = () => {
   return (
     
 
-<footer className="bg-gray-700">
+<footer className="bg-[#317670]">
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-              <a href="/" className="flex items-center">
-                  {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" /> */}
-                  <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">JifsonJoyTravels</span>
-              </a>
+               <a href="/">
+                <Image src="/logos/Logo1 White.png" width={150} height={40} alt="logo"/>
+            </a>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>

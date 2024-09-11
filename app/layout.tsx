@@ -22,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/logos/logo2.png" />
       <body className={`${inter.className}`}>{children}</body>
     </html>
   );
