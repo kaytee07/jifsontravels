@@ -12,11 +12,11 @@ const damion = Damion({
 
 
 export const metadata: Metadata = {
-  icons: {
-    icon: "/public/favicon.ico"
-  },
   title: "JifsonJoyTravels",
   description: "Travel around Ghana with us",
+   icons: {
+    icon: "/favicon.ico"
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/public/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       <body className={`${inter.className}`}>{children}</body>
     </html>
   );
