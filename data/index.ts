@@ -233,4 +233,19 @@ export const aboutus = [
         }
 ]
 
+export const gallery = [
+    "/img/1.jpg", 
+    "/img/2.jpg", 
+    "/img/3.jpg", 
+    "/img/7dc7379cff48e842b95acf37763d7f00.jpg", 
+    "/img/47.jpg", 
+    "/img/76.jpg", 
+    "/img/4167_Boti-falls.jpeg", 
+    "/img/39924.jpg", 
+    "/img/201009100355-11-ghana-things-to-do.jpg",
+    "/img/1711556571153.jpeg",
+    "/img/akatekyi-crocodile-pond.jpeg",
+
+]
+
 

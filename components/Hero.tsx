@@ -19,14 +19,14 @@ const Hero = () => {
     <div
     className="
     bg-[url('../public/img/3.jpg')] 
-     bg-cover bg-center flex flex-col items-center justify-center gap-3"
+     bg-cover bg-center flex flex-col justify-center gap-3"
     style={{
         width: "100%",
         height: "30rem"
     }} 
     >
-      <div className=" h-32 flex flex-col justify-center gap-3" >
-         <h1 className={`text-center scroll-m-20 text-5xl ${lobster.className} animate-slideIn text-white font-extrabold tracking-tight`}>
+      <div className=" h-32 flex flex-col gap-3" >
+         <h1 className={` text-center scroll-m-20 text-5xl ${lobster.className} animate-slideIn text-white font-extrabold tracking-tight`}>
           A Trip To Ghana
         </h1>
         <div className="buttons flex  justify-center gap-2">
