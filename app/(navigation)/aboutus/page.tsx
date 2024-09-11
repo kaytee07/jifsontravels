@@ -3,7 +3,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className="md:h-[65vh]">
+    <div className=" text-[#317670]">
       <Aboutus/>
     </div>
   )

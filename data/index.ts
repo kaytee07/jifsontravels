@@ -224,14 +224,68 @@ export const services = [
 
 export const aboutus = [
         {
+            desc: `At JifsonJoy Travel & Tour, our vision is to create transformative travel experiences in Ghana that go beyond the ordinary. Our mission, carried out every day, is to realize this vision through high-quality, safe, and sustainable journeys that resonate with both our values and the expectations of our discerning travelers.
+We are committed to upholding the highest standards of quality in our services, ensuring every journey with us is not only memorable but also aligns with responsible and ethical tourism practices. 
+Our core values reflect our respect for local laws, communities, and the environment, underpinning our efforts to offer travel experiences that are meaningful and purpose-driven.
+`
+        },
+        {
             title: "Mission",
-            desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt vitae metus ac cursus. Fusce nulla est, posuere eget aliquam in, eleifend non est. Donec efficitur pellentesque lacus quis auctor. Duis in gravida sapien. Donec nulla ex, semper ac massa ullamcorper, pretium viverra orci. Morbi ut elit sit amet sapien porta elementum. Nullam nec odio orci."
+            desc:"We are serving our customers, searching for their entire satisfaction, providing quality touristic services, and committing to our country's social, cultural, and environmental reality"
         },
         {
             title: "Vision",
-            desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt vitae metus ac cursus. Fusce nulla est, posuere eget aliquam in, eleifend non est. Donec efficitur pellentesque lacus quis auctor. Duis in gravida sapien. Donec nulla ex, semper ac massa ullamcorper, pretium viverra orci. Morbi ut elit sit amet sapien porta elementum. Nullam nec odio orci."
+            desc:"By 2025, we will be among the very top businesses in Ghana's tourist industry, widely lauded for the excellence of our offerings and the positive impact we have on the nation's progress."
+        },
+        {
+            title: "Honesty",
+            desc:"As a company, the information provided to our customers must be honest and trustworthy. This value makes us different and helps us make decisions based on firm facts."
+        },
+        {
+            title: "Teamwork",
+            desc:"Our relationship rests on a foundation of teamwork and mutual support, so we have built a group focused on getting things done and operating based on talent and give-and-take."
+        },
+        {
+            title: "We respect the individual",
+            desc:"Respect is considered the fundamental base of the relations within our company. We value human dignity, accept our differences and consider our rights and those of others to establish a polite and friendly working environment."
+        },
+        {
+            title: "Service Quality",
+            desc:"Service quality is one of our most essential values, which demands all our effort, determination, and courage to succeed in our work and the services we provide. We conduct our work with dedication and without mistakes, optimizing delivery time and putting effort into what we do to achieve quality results."
+        },
+        {
+            title: "Communication",
+            desc:"Each of us must interact transparently and appropriately, trying to strengthen our interpersonal relations and the company’s image. We are conscious that our communication generates perceptions, expectations, and requirements, which motivate us to improve our behavior, attitude, and knowledge."
+        },
+        {
+            title: "Loyalty",
+            desc:"Our team members must show loyalty, referring to faithfulness, commitment, identification, pride, membership, confidentially, and interest defense, at any moment for and in the company’s name."
+        },
+        {
+            title: "Constructive Spirit",
+            desc:"Constructed spirit refers to a positive attitude, optimism, increased value chain, creativity, and good faith that must be shown and lived by those who work in our company."
+        },
+        {
+            title: "We respect the individual",
+            desc: "Respect is considered the fundamental base of the relations within our company. We value human dignity, accept our differences and consider our rights and those of others to establish a polite and friendly working environment."
         }
 ]
+
+export const contactUs = [
+    {
+        title: "Name",
+        desc: "James Ofosu"
+    },
+    {
+        title: "Adress",
+        desc: "627 London Road, Grays, Essex. RM203BJ"
+    },
+    {
+        title: "Telephone/Email",
+        desc: "Tel: 07741125651 | Email: ofosu.james@yahoo.com"
+    },
+]
+
 
 export const gallery = [
     "/img/1.jpg", 
@@ -245,7 +299,27 @@ export const gallery = [
     "/img/201009100355-11-ghana-things-to-do.jpg",
     "/img/1711556571153.jpeg",
     "/img/akatekyi-crocodile-pond.jpeg",
-
+    "/img/boti-falls.jpg",
+    "/img/caption.jpg",
+    "/img/cities-in-Ghana.jpg",
+    "/img/caption.jpg",
+    "/img/d1c4d065-21fb-46ae-a2c7-70016c28f1a4_images32.jpeg",
+    "/img/dr-kwame-nkrumah-s-mausoleum.jpg",
+    "/img/e42b0f04ac49438686778c8e19faf7ca.jpg",
+    "/img/eastern-region-ghana.jpg",
+    "/img/f3.jpg",
+    "/img/Ghana-seaside_bu.jpg",
+    "/img/ghana-tourism-KwameNkrumahMausoleum.jpg",
+    "/img/IMG_5843-830x554.jpg",
+    "/img/IMG_5854-958x583.jpg",
+    "/img/jpeg_large_202112291737-52be5c6bb181e85c0676ef4a9406ee13.jpeg",
+    "/img/jpeg_medium_202112291737-2395c1892207087d4bf62d547ac772fe.jpeg",
+    "/img/jpeg_medium_202112291737-9581eaaa0aa89c33e1bd206ff845a055.jpeg",
+    "/img/kakum_-flufftail.jpg",
+    "/img/MG_1179-612x340.jpg",
+    "/img/nzulez12dbs.jpg",
+    "/img/tour-sites-in-ghana-scaled.jpg",
+    "/img/Umbrella-Rock-accra.png",
 ]
 
 
