@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet"
 import { navigation } from "@/data"
 import Image from "next/image"
+import Link from "next/link"
 
 export function SheetDemo() {
   return (
@@ -45,7 +46,9 @@ export function SheetDemo() {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
-            <Image src="/logos/Logo.png" width={70} height={40} alt="logo"/>
+            <Link href="/">
+            <Image src="/logos/Logo.png" width={100} height={40} alt="logo"/>
+            </Link>
             </SheetTitle>
           <SheetDescription>
             {/* Make changes to your profile here. Click save when you're done. */}

@@ -5,10 +5,10 @@ import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <header className='flex flex-row justify-between py-4 px-10'>
+    <header className='flex flex-row justify-between items-center py-4 px-10'>
         <div className="logo">
             <a href="/">
-                <Image src="/logos/Logo.png" width={70} height={40} alt="logo"/>
+                <Image src="/logos/Logo.png" width={100} height={20} alt="logo"/>
             </a>
         </div>
         <nav 
