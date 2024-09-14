@@ -50,13 +50,39 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                 </nav>
             </div>
 
-            <div className="my-3">
-                <div id="tabs-with-underline-1" role="tabpanel" aria-labelledby="tabs-with-underline-item-1" className={`${showDetails ? '' : 'hidden'} px-10 text-justify`}>
+            <div className="my-3 px-10 ">
+                <div id="tabs-with-underline-1" role="tabpanel" aria-labelledby="tabs-with-underline-item-1" className={`${showDetails ? '' : 'hidden'} text-justify`}>
                     <h1>Tour Overview</h1>
                     <p className="text-gray-500 dark:text-neutral-400 pb-5">
                         {details}
                     </p>
-                    <Dialog>
+                    
+                </div>
+                <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'}`}>
+                    {iti.map((dayObject, i) => {
+                        const dayKey = `Day ${i}`;
+                        const dayValue = dayObject;
+                        return (
+                            <div key={i}>
+                                <h2>{dayKey}</h2>
+                                <p>{dayValue}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+                <div id="tabs-with-underline-3" role="tabpanel" aria-labelledby="tabs-with-underline-item-3" className={`${showGallery ? '' : 'hidden'}`}>
+                    {gallery.map((photo, i) => (
+                        <div key={i}>
+                            <Image
+                                src={photo}
+                                width={200}
+                                height={200}
+                                alt={`photo ${i}`}
+                            />
+                        </div>
+                    ))}
+                </div>
+                <Dialog>
                         <DialogTrigger asChild>
                             <Button variant="outline">Edit Profile</Button>
                         </DialogTrigger>
@@ -64,7 +90,7 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                             <DialogHeader>
                             <DialogTitle>Edit profile</DialogTitle>
                             <DialogDescription>
-                                Make changes to your profile here. Click save when you're done.
+                                Make changes to your profile here. Click save when you&apos;re done.
                             </DialogDescription>
                             </DialogHeader>
                             <div className="grid gap-4 py-4">
@@ -94,32 +120,8 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                             </DialogFooter>
                         </DialogContent>
                     </Dialog>
-                </div>
-                <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'}`}>
-                    {iti.map((dayObject, i) => {
-                        const dayKey = `Day ${i}`;
-                        const dayValue = dayObject;
-                        return (
-                            <div key={i}>
-                                <h2>{dayKey}</h2>
-                                <p>{dayValue}</p>
-                            </div>
-                        );
-                    })}
-                </div>
-                <div id="tabs-with-underline-3" role="tabpanel" aria-labelledby="tabs-with-underline-item-3" className={`${showGallery ? '' : 'hidden'}`}>
-                    {gallery.map((photo, i) => (
-                        <div key={i}>
-                            <Image
-                                src={photo}
-                                width={200}
-                                height={200}
-                                alt={`photo ${i}`}
-                            />
-                        </div>
-                    ))}
-                </div>
             </div>
+            
         </div>
     );
 }
