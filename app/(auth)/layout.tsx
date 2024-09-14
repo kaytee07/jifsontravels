@@ -1,3 +1,10 @@
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 
 export default function RootLayout({
   children,
@@ -6,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <main>
-      <body>{children}</body>
+      {children}
     </main>
   );
 }

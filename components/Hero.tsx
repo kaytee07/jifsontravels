@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from './ui/button'
 import { Montserrat, Lobster } from 'next/font/google';
 import img from "../public/img/1.jpg"
+import Link from 'next/link';
 
 const montserrat = Montserrat({
   weight: ['400', '700'], 
@@ -30,8 +31,12 @@ const Hero = () => {
           A Trip To Ghana
         </h1>
         <div className="buttons flex  justify-center gap-2">
-          <Button className="border-white border-2 bg-[transparent] text-white">Sign in</Button>
+          <Link href="/sign-in">
+            <Button className="border-white border-2 bg-[transparent] text-white">Sign in</Button>
+          </Link>
+          <Link href="/sign-up">
           <Button className="border-white bg-[#317670] ">Sign up</Button>
+          </Link>
         </div>
       </div>
         
