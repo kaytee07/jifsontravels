@@ -58,7 +58,7 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                     </p>
                     
                 </div>
-                <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'}`}>
+                <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'} pb-5`}>
                     {iti.map((dayObject, i) => {
                         const dayKey = `Day ${i}`;
                         const dayValue = dayObject;
@@ -84,31 +84,32 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                 </div>
                 <Dialog>
                         <DialogTrigger asChild>
-                            <Button variant="outline">Edit Profile</Button>
+                            <Button className="bg-[#317670] text-white" variant="outline">Book Now</Button>
                         </DialogTrigger>
                         <DialogContent className="sm:max-w-[425px]">
                             <DialogHeader>
-                            <DialogTitle>Edit profile</DialogTitle>
+                            <DialogTitle>Book Tour</DialogTitle>
                             <DialogDescription>
-                                Make changes to your profile here. Click save when you&apos;re done.
+                               Enter the number of persons you want to book for
                             </DialogDescription>
                             </DialogHeader>
                             <div className="grid gap-4 py-4">
                             <div className="grid grid-cols-4 items-center gap-4">
                                 <Label htmlFor="name" className="text-right">
-                                Name
+                                Number of persons
                                 </Label>
                                 <Input
-                                id="name"
-                                defaultValue="Pedro Duarte"
+                                id="number"
+                                defaultValue="select number of persons"
                                 className="col-span-3"
                                 />
                             </div>
                             <div className="grid grid-cols-4 items-center gap-4">
                                 <Label htmlFor="username" className="text-right">
-                                Username
+                                Total amount
                                 </Label>
                                 <Input
+                                disabled
                                 id="username"
                                 defaultValue="@peduarte"
                                 className="col-span-3"
@@ -116,7 +117,7 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                             </div>
                             </div>
                             <DialogFooter>
-                            <Button type="submit">Save changes</Button>
+                            <Button type="submit" className="bg-[#317670]">Proceed to checkout</Button>
                             </DialogFooter>
                         </DialogContent>
                     </Dialog>
