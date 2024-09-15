@@ -246,7 +246,7 @@ Our core values reflect our respect for local laws, communities, and the environ
             desc:"Our relationship rests on a foundation of teamwork and mutual support, so we have built a group focused on getting things done and operating based on talent and give-and-take."
         },
         {
-            title: "We respect the individual",
+            title: "We Respect The Individual",
             desc:"Respect is considered the fundamental base of the relations within our company. We value human dignity, accept our differences and consider our rights and those of others to establish a polite and friendly working environment."
         },
         {
@@ -266,7 +266,7 @@ Our core values reflect our respect for local laws, communities, and the environ
             desc:"Constructed spirit refers to a positive attitude, optimism, increased value chain, creativity, and good faith that must be shown and lived by those who work in our company."
         },
         {
-            title: "We respect the individual",
+            title: "We Respect The Individual",
             desc: "Respect is considered the fundamental base of the relations within our company. We value human dignity, accept our differences and consider our rights and those of others to establish a polite and friendly working environment."
         }
 ]

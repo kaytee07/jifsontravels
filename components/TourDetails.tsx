@@ -44,35 +44,7 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
   })
 
    async function onSubmit(values: z.infer<typeof formSchema>) {
-    // setisLoading(true)
-    // try {
-    //     console.log(values)
-    //     if (type === "sign-in"){
-    //         // const response = await signIn({
-    //         //     email:values.email,
-    //         //     password: values.password
-    //         // })
-
-    //         // if (response) router.push("/mytours")
-    //     }
-
-    //     if (type === "sign-up"){
-    //         // const newUser = await SignUp(data);
-    //         // setUser(newUser)
-    //         // const userData ={
-    //         //     firstName: values.firstname,
-    //         //     lastName: values.lastname,
-    //         //     phoneNumber: values.phonenumber,
-    //         //     email: values.email,
-    //         //     password: values.password
-    //         // }
-    //     }
-        
-    // } catch (error) {
-    //     console.log(error)
-    // } finally {
-    //     setisLoading(false)
-    // }
+    console.log(values)
     
   } 
 
@@ -140,8 +112,7 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                         <DialogTrigger asChild>
                             <Button className="bg-[#317670] text-white" variant="outline">Book Now</Button>
                         </DialogTrigger>
-                        <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                        
                         <DialogContent className="sm:max-w-[400px]">
                             <DialogHeader>
                             <DialogTitle>Book Tour</DialogTitle>
@@ -149,16 +120,18 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                                Enter the number of persons you want to book for
                             </DialogDescription>
                             </DialogHeader>
+                            <Form {...form}>
+                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                             <div className="grid gap-4 py-4">
                             <CustomInput control={form.control} label="Number of persons" name="numofpersons" placeholder="select number of persons"/>
                             <CustomInput control={form.control} label="Total Amount" name="totalAmt" placeholder="total amount"/>
                             </div>
-                            <DialogFooter>
+                            
                             <Button type="submit" className="bg-[#317670]">Proceed to checkout</Button>
-                            </DialogFooter>
+                        
+                             </form>
+                             </Form>
                         </DialogContent>
-                        </form>
-                        </Form>
                     </Dialog>
             </div>
             
