@@ -14,8 +14,10 @@ import {
 import { navigation } from "@/data"
 import Image from "next/image"
 import Link from "next/link"
+import { useUser } from "@clerk/nextjs";
 
 export function SheetDemo() {
+  const { isSignedIn, user } = useUser();
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -64,12 +66,18 @@ export function SheetDemo() {
           )
         )
         }
-                <a className="w-[6rem]" href='/mytours'>
-                        <li className="navitems flex items-center hover:border-b-2 hover:border-[#e8bd3b] text-[#317670]" >My tours</li>
-                </a>
-                <a className="w-[6rem]" href='history'>
-                        <li className="navitems flex items-center hover:border-b-2 hover:border-[#e8bd3b] text-[#317670]" >History</li>
-                </a>
+         {
+                    isSignedIn && (
+                            <>
+                            <a className="w-[6rem]" href='/mytours'>
+                             <li className="navitems flex items-center justify-center hover:border-b-2 hover:border-[#e8bd3b] text-[#317670]" >My tours</li>
+                            </a>
+                            <a className="w-[6rem]" href='history'>
+                                    <li className="navitems flex items-center justify-center hover:border-b-2 hover:border-[#e8bd3b] text-[#317670]" >History</li>
+                            </a>
+                            </>
+                        )
+                }
         
          </ul>
         </div>

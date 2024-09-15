@@ -13,6 +13,13 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import CustomInput from './CustomInput'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from "zod"
+import { authFormSchema } from '@/lib/utils'
+import { Form } from './ui/form'
+
 
 const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string[], details: string }) => {
     const [showDetails, setShowDetails] = useState(true);
@@ -24,6 +31,53 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
         setShowItinerary(tab === 'itinerary');
         setShowGallery(tab === 'gallery');
     };
+
+ const formSchema = authFormSchema("sign-in");
+
+      // 1. Define your form.
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      numofpersons: 0,
+      totalAmt:0,
+    },
+  })
+
+   async function onSubmit(values: z.infer<typeof formSchema>) {
+    // setisLoading(true)
+    // try {
+    //     console.log(values)
+    //     if (type === "sign-in"){
+    //         // const response = await signIn({
+    //         //     email:values.email,
+    //         //     password: values.password
+    //         // })
+
+    //         // if (response) router.push("/mytours")
+    //     }
+
+    //     if (type === "sign-up"){
+    //         // const newUser = await SignUp(data);
+    //         // setUser(newUser)
+    //         // const userData ={
+    //         //     firstName: values.firstname,
+    //         //     lastName: values.lastname,
+    //         //     phoneNumber: values.phonenumber,
+    //         //     email: values.email,
+    //         //     password: values.password
+    //         // }
+    //     }
+        
+    // } catch (error) {
+    //     console.log(error)
+    // } finally {
+    //     setisLoading(false)
+    // }
+    
+  } 
+
+
+
 
     return (
         <div>
@@ -58,9 +112,9 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                     </p>
                     
                 </div>
-                <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'} pb-5`}>
+                <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'} pb-5 max-md:w-[90%]`}>
                     {iti.map((dayObject, i) => {
-                        const dayKey = `Day ${i}`;
+                        const dayKey = `Day ${i+1}`;
                         const dayValue = dayObject;
                         return (
                             <div key={i}>
@@ -86,7 +140,9 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                         <DialogTrigger asChild>
                             <Button className="bg-[#317670] text-white" variant="outline">Book Now</Button>
                         </DialogTrigger>
-                        <DialogContent className="sm:max-w-[425px]">
+                        <Form {...form}>
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                        <DialogContent className="sm:max-w-[400px]">
                             <DialogHeader>
                             <DialogTitle>Book Tour</DialogTitle>
                             <DialogDescription>
@@ -94,32 +150,15 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                             </DialogDescription>
                             </DialogHeader>
                             <div className="grid gap-4 py-4">
-                            <div className="grid grid-cols-4 items-center gap-4">
-                                <Label htmlFor="name" className="text-right">
-                                Number of persons
-                                </Label>
-                                <Input
-                                id="number"
-                                defaultValue="select number of persons"
-                                className="col-span-3"
-                                />
-                            </div>
-                            <div className="grid grid-cols-4 items-center gap-4">
-                                <Label htmlFor="username" className="text-right">
-                                Total amount
-                                </Label>
-                                <Input
-                                disabled
-                                id="username"
-                                defaultValue="@peduarte"
-                                className="col-span-3"
-                                />
-                            </div>
+                            <CustomInput control={form.control} label="Number of persons" name="numofpersons" placeholder="select number of persons"/>
+                            <CustomInput control={form.control} label="Total Amount" name="totalAmt" placeholder="total amount"/>
                             </div>
                             <DialogFooter>
                             <Button type="submit" className="bg-[#317670]">Proceed to checkout</Button>
                             </DialogFooter>
                         </DialogContent>
+                        </form>
+                        </Form>
                     </Dialog>
             </div>
             

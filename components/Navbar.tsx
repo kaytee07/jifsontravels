@@ -17,10 +17,9 @@ const Navbar = () => {
             </a>
         </div>
         <nav 
-        className="flex justify-between h-[2rem] text-sm font-md max-md:hidden" 
-        style={{"width": "38rem", }}>
+        className="flex justify-between h-[2rem] text-sm font-md md:w-[40rem]">
             <ul 
-            className='flex flex-row justify-between items-center' 
+            className='flex flex-row justify-between items-center max-md:hidden' 
             style={{"width": "40rem"}}>
                 {navigation.map((data, i) => (
                     <a key={i} className="w-[6rem]" href={data.url}>
@@ -41,13 +40,14 @@ const Navbar = () => {
                         )
                 }
               
-                <UserButton/>
             </ul>
-            
+                <UserButton/>
+            <div className="md:hidden flex items-center">
+                <SheetDemo/>
+            </div>
         </nav>
-         <div className="md:hidden">
-            <SheetDemo/>
-        </div>
+      
+        
          
     </header>
     
