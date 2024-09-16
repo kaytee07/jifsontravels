@@ -35,7 +35,7 @@ const CustomInput = ({ control, label, placeholder, name}: CustomInput) => {
                             <div className="flex flex-col w-full">
                                 <FormControl>
                                     <Input
-                                        type={name === 'password' ? "password" : "text"}
+                                        type="number"
                                         placeholder={placeholder}
                                         className="input-class"
                                         {...field}

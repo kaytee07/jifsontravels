@@ -30,7 +30,7 @@ const PackageType = ({params}: {params: {packagetypes: string}}) => {
   return (
     <main>
       <TourHero name={tourType.name} url={tourType.imgUrl}/>
-      <TourDetails iti={flattenedItinerary} gallery={tourType.gallery} details={tourType.details}/>
+      <TourDetails iti={flattenedItinerary} gallery={tourType.gallery} details={tourType.details} price={tourType.price}/>
     </main>
   )
 }

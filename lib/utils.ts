@@ -7,8 +7,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const authFormSchema = (type: string) => z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
+  email: "sign-in" ? z.string().optional() : z.string().min(3),
+  password: "sign-in" ? z.string().optional() : z.string().min(3),
   numofpersons: z.number(),
   totalAmt: z.number(),
   firstname: type === "sign-in" ? z.string().optional() : z.string().min(3),

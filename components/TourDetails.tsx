@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -11,20 +11,27 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import CustomInput from './CustomInput'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from "zod"
-import { authFormSchema } from '@/lib/utils'
-import { Form } from './ui/form'
 
 
-const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string[], details: string }) => {
+const TourDetails = ({ iti, gallery, details, price }: { iti: string[], gallery: string[], details: string, price:number }) => {
     const [showDetails, setShowDetails] = useState(true);
     const [showItinerary, setShowItinerary] = useState(false);
     const [showGallery, setShowGallery] = useState(false);
+    const [numOfPersons, setNumOfPersons] = useState<number>(0);
+    const [totalAmt, setTotalAmt] = useState<number>(0);
 
     const handleTabChange = (tab: 'details' | 'itinerary' | 'gallery') => {
         setShowDetails(tab === 'details');
@@ -32,23 +39,33 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
         setShowGallery(tab === 'gallery');
     };
 
- const formSchema = authFormSchema("sign-in");
+ 
+const formSchema = z.object({
+  numofpersons: z.string(),
+  totalAmt: z.number()
+});
 
       // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      numofpersons: 0,
-      totalAmt:0,
+      numofpersons: "",
+      totalAmt: 0,
     },
   })
 
+  const numofpersons: string = form.watch("numofpersons")
+
+  useEffect(()=>{
+    let totalAmt:number = Number(numofpersons) * price;
+    form.setValue("totalAmt", totalAmt)
+  }, [numofpersons, form.setValue])
+
+
+
    async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
-    
   } 
-
-
 
 
     return (
@@ -123,12 +140,56 @@ const TourDetails = ({ iti, gallery, details }: { iti: string[], gallery: string
                             <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                             <div className="grid gap-4 py-4">
-                            <CustomInput control={form.control} label="Number of persons" name="numofpersons" placeholder="select number of persons"/>
-                            <CustomInput control={form.control} label="Total Amount" name="totalAmt" placeholder="total amount"/>
+                            <FormField
+                                control={form.control}
+                                name="numofpersons"
+                                render={({ field }) => (
+                                <div className="form-item">
+                                        <FormLabel className="form-label mb-1">
+                                            Number of persons
+                                        </FormLabel>
+                                        <div className="flex flex-col w-full">
+                                            <FormControl>
+                                                <Input
+                                                    type="number"
+                                                    placeholder="number of persons"
+                                                    className="input-class"
+                                                    {...field}
+                                                    
+                                                />
+                                            </FormControl>
+                                            <FormMessage
+                                                className="form-message mt-2"/>
+                                        </div>
+                                </div>
+                                )}
+                                />
+<FormField
+                                control={form.control}
+                                name="totalAmt"
+                                render={({ field }) => (
+                                <div className="form-item">
+                                        <FormLabel className="form-label mb-1">
+                                            Total Amount
+                                        </FormLabel>
+                                        <div className="flex flex-col w-full">
+                                            <FormControl>
+                                                <Input
+                                                    type="number"
+                                                    placeholder="number of persons"
+                                                    className="input-class"
+                                                    {...field}
+                                                    disabled
+                                                />
+                                            </FormControl>
+                                            <FormMessage
+                                                className="form-message mt-2"/>
+                                        </div>
+                                </div>
+                                )}
+                                />
                             </div>
-                            
                             <Button type="submit" className="bg-[#317670]">Proceed to checkout</Button>
-                        
                              </form>
                              </Form>
                         </DialogContent>
