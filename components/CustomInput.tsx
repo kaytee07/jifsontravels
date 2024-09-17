@@ -19,10 +19,11 @@ interface CustomInput {
   control: Control<z.infer<typeof formSchema>>,
   name: FieldPath<z.infer<typeof formSchema>>,
   label: string,
-  placeholder: string
+  placeholder: string,
+  price: number
 }
 
-const CustomInput = ({ control, label, placeholder, name}: CustomInput) => {
+const CustomInput = ({ control, label, placeholder, name, price}: CustomInput) => {
   return (
                     <FormField
                     control={control}
@@ -39,6 +40,7 @@ const CustomInput = ({ control, label, placeholder, name}: CustomInput) => {
                                         placeholder={placeholder}
                                         className="input-class"
                                         {...field}
+                                        
                                     />
                                 </FormControl>
                                 <FormMessage

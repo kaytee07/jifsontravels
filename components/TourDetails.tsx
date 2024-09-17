@@ -24,9 +24,21 @@ import { Input } from "@/components/ui/input"
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from "zod"
+import { useUser } from '@clerk/nextjs'
+import { paidTour } from '@/lib/actions/user.actions'
+
+interface detailsPrototype{
+    duration: string;
+    packageType:string; 
+    iti: string[];
+    gallery: string[];
+    details: string; 
+    price:number; 
+}
 
 
-const TourDetails = ({ iti, gallery, details, price }: { iti: string[], gallery: string[], details: string, price:number }) => {
+const TourDetails = ({ iti, gallery, details, price, packageType, duration }: detailsPrototype) => {
+    const { user } = useUser();
     const [showDetails, setShowDetails] = useState(true);
     const [showItinerary, setShowItinerary] = useState(false);
     const [showGallery, setShowGallery] = useState(false);
@@ -64,7 +76,20 @@ const formSchema = z.object({
 
 
    async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+    try {
+        if (!user) window.location.href = "/sign-in"
+        const data = {
+            numofpersons: values.numofpersons,
+            totalAmt: values.totalAmt,
+            duration,
+            packageType,
+            userId: user?.id,
+            email: user?.emailAddresses[0].emailAddress
+        }
+       window.location.href = await paidTour(data)
+    } catch (error) {
+        
+    }
   } 
 
 
