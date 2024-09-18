@@ -17,7 +17,7 @@ const Navbar = () => {
             </a>
         </div>
         <nav 
-        className="flex justify-between h-[2rem] text-sm font-md md:w-[40rem]">
+        className="flex justify-between h-[2rem] text-sm font-md md:w-[40rem] max-md:gap-5">
             <ul 
             className='flex flex-row justify-between items-center max-md:hidden' 
             style={{"width": "40rem"}}>
