@@ -26,6 +26,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from "zod"
 import { useUser } from '@clerk/nextjs'
 import { paidTour } from '@/lib/actions/user.actions'
+import { Loader2 } from 'lucide-react'
+import { Alert } from './ui/alert'
+
 
 interface detailsPrototype{
     duration: string;
@@ -39,6 +42,7 @@ interface detailsPrototype{
 
 const TourDetails = ({ iti, gallery, details, price, packageType, duration }: detailsPrototype) => {
     const { user } = useUser();
+    const [isLoading, setisLoading] = useState(false)
     const [showDetails, setShowDetails] = useState(true);
     const [showItinerary, setShowItinerary] = useState(false);
     const [showGallery, setShowGallery] = useState(false);
@@ -76,6 +80,7 @@ const formSchema = z.object({
 
 
    async function onSubmit(values: z.infer<typeof formSchema>) {
+    setisLoading(true);
     try {
         if (!user) window.location.href = "/sign-in"
         const data = {
@@ -84,11 +89,14 @@ const formSchema = z.object({
             duration,
             packageType,
             userId: user?.id,
-            email: user?.emailAddresses[0].emailAddress
+            email: user?.emailAddresses[0].emailAddress,
+            name: user?.firstName
         }
        window.location.href = await paidTour(data)
     } catch (error) {
         
+    } finally {
+        setisLoading(false)
     }
   } 
 
@@ -159,7 +167,7 @@ const formSchema = z.object({
                             <DialogHeader>
                             <DialogTitle>Book Tour</DialogTitle>
                             <DialogDescription>
-                               Enter the number of persons you want to book for
+                               Note: During checkout Amount will be converted to it Ghana cedi equivalent
                             </DialogDescription>
                             </DialogHeader>
                             <Form {...form}>
@@ -195,7 +203,7 @@ const formSchema = z.object({
                                 render={({ field }) => (
                                 <div className="form-item">
                                         <FormLabel className="form-label mb-1">
-                                            Total Amount
+                                            Total Amount (USD)
                                         </FormLabel>
                                         <div className="flex flex-col w-full">
                                             <FormControl>
@@ -214,7 +222,17 @@ const formSchema = z.object({
                                 )}
                                 />
                             </div>
-                            <Button type="submit" className="bg-[#317670]">Proceed to checkout</Button>
+                            <Button type="submit" className="bg-[#317670]">
+                                 {
+                                 isLoading ? (
+                                   <>
+                                     <Loader2 size={20}
+                                     className="animate-spin"
+                                     /> &nbsp;loading...
+                                    </>
+                                 ) : "Proceed to checkout"
+                                } 
+                               </Button>
                              </form>
                              </Form>
                         </DialogContent>

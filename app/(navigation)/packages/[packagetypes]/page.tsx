@@ -1,3 +1,4 @@
+import { AlertDemo } from '@/components/Alert';
 import TourDetails from '@/components/TourDetails';
 import TourHero from '@/components/TourHero'
 import { packageDetails } from '@/data'
