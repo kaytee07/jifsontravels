@@ -42,7 +42,7 @@ export const paidTour = async (data: PaidTourProps) => {
                 subject: "PAYMENT SUCCESSFUL",
                 body: `
                 <p>Dear ${name},<p>
-                <p>Thank you for touring with us, your payment of GHS ${totalAmt} is successful. further details will be contacted to you<p>
+                <p>Thank you for touring with us, your payment of USD ${totalAmt} which is GHS ${totalAmt * currency.conversion_rate} is successful.</br> further details will be contacted to you<p>
                 `
             })
 

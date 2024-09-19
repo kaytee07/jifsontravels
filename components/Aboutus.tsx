@@ -1,9 +1,15 @@
 import { aboutus } from '@/data'
+import { Open_Sans } from 'next/font/google'
 import React from 'react'
+
+const openSans = Open_Sans({
+  weight: ['400', '700'], // Adjust weights as needed
+  subsets: ['latin'],     // Load Latin subset
+});
 
 const Aboutus = () => {
   return (
-<div className="flex flex-col justify-center items-center h-auto">
+<div className={`flex flex-col justify-center items-center h-auto ${openSans.className}`}>
         <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0  ">About Us</h2>
         <div className="details gap-4 backdrop: flex-col items-center w-[80%] justify-center mb-10 flex flex-wrap">
     {
