@@ -53,68 +53,28 @@ export const Location = [
 
 export const packages = [
     {
-        name: "Fabolous Dubai",
-        price: "900",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        name: "The Cape Coast Tour",
+        price: "250",
+        desc: " A visit to the Cape Coast Castle were we will learn and discover the history behind why Cape coasts Castle was built and how it connects to the indigens of Cape Coast, the Central region and the country as a whole.",
+        img: "/img/7dc7379cff48e842b95acf37763d7f00.jpg"
     },
     {
-        name: "Falls Waterfall",
-        price: "1900",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        name: "Tamale Tour",
+        price: "700",
+        desc: " A visit to Mole National Park in the Northern region of Ghana. ",
+        img: "/img/1.jpg"
     },
-    {
-        name: "Summer Mountains",
-        price: "1200",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-        {
-        name: "Fabolous Dubai",
-        price: "900",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        name: "Falls Waterfall",
-        price: "1900",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        name: "Summer Mountains",
-        price: "1200",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-        {
-        name: "Fabolous Dubai",
-        price: "900",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        name: "Falls Waterfall",
-        price: "1900",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        name: "Summer Mountains",
-        price: "1200",
-        desc: " With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.",
-        img: "https://plus.unsplash.com/premium_photo-1661954483883-edd65eac3577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+    
 ]
 
 export const packageDetails = {
-    "fabolousdubai": {
-        name:"Fabolous Dubai",
+    "tamaletour": {
+        name:"TAMALE TOUR",
         duration: "January 7 - January 9",
-        price: 900,
-        imgUrl:"https://images.unsplash.com/photo-1698889223670-3da5653e195d?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        details: "The Maldives is a tropical nation in the Indian Ocean composed of 26 ring-shaped atolls, which are made up of more than 1,000 coral islands. It’s known for its beaches, blue lagoons and extensive reefs. The capital, Malé, has a busy fish market, restaurants and shops on the main road, Majeedhee Magu, and 17th-century Hukuru Miskiy (also known as Friday Mosque) made of carved white coral.",
+        price: 700,
+        imgUrl:"/img/1.jpg",
+        packs: ['All meals + bottled water', 'Round trip air ticket', ' ⁠Hotel Pick up and Drop off', '⁠Private Tour Guide', 'Pictures and Videos of the whole tour', '⁠All applicable tax/fees', 'Accomodation', '⁠Airconditioned Car'],
+        details: "A visit to Mole National Park in the Northern region of Ghana. The Park is the largest wildlife refuge spot for elephants, buffaloes, antelopes and more. Trip will include a visit to the Larabunga mosque, mystic Stone and the Mognori Village. There will be lessons on how shea butter is processed locally.",
         itinerary:[{
                 day1: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
             },
@@ -134,12 +94,13 @@ export const packageDetails = {
         ],
         gallery:[]
     },
-    "fallswaterfall": {
-        name:"Falls Waterfall",
+    "thecapecoasttour": {
+        name:"The Cape Coast Tour",
         duration: "January 7 - January 9",
-        price: 1900,
-        imgUrl:"https://plus.unsplash.com/premium_photo-1661964149725-fbf14eabd38c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        details: "The Maldives is a tropical nation in the Indian Ocean composed of 26 ring-shaped atolls, which are made up of more than 1,000 coral islands. It’s known for its beaches, blue lagoons and extensive reefs. The capital, Malé, has a busy fish market, restaurants and shops on the main road, Majeedhee Magu, and 17th-century Hukuru Miskiy (also known as Friday Mosque) made of carved white coral.",
+        price: 250,
+        imgUrl:"/img/7dc7379cff48e842b95acf37763d7f00.jpg",
+        packs: ['Breakfast/ Lunch/ Snacks with bottled water.', 'Air conditioned Vehicle', ' ⁠All Fees included', '⁠Private Tour Guide', 'Pictures and Videos of the whole tour', 'Wi-Fi on board', 'Hotel Pick up and Drop off.'],
+        details: "A visit to the Cape Coast Castle were we will learn and discover the history behind why Cape coasts Castle was built and how it connects to the indigens of Cape Coast, the Central region and the country as a whole. We will also tour the Kakum National Park where we will have the Canopy Walk experience.",
          itinerary:[{
                 day1: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
             },
@@ -159,31 +120,6 @@ export const packageDetails = {
         ],
         gallery:[]
     },
-    "summermountains": {
-        name:"Summer Mountains",
-        duration: "January 7 - January 9",
-        price: 1200,
-        imgUrl:"https://images.unsplash.com/photo-1472017053394-b29fded587cd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        details: "The Maldives is a tropical nation in the Indian Ocean composed of 26 ring-shaped atolls, which are made up of more than 1,000 coral islands. It’s known for its beaches, blue lagoons and extensive reefs. The capital, Malé, has a busy fish market, restaurants and shops on the main road, Majeedhee Magu, and 17th-century Hukuru Miskiy (also known as Friday Mosque) made of carved white coral.",
-         itinerary:[{
-                day1: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day2: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day3: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day4: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day5: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-
-        ],
-        gallery:[]
-    }
 }
 
 export const testimonials = [

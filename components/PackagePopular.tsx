@@ -20,7 +20,7 @@ const PackagePopular = () => {
                         </p>
                         <div>
                         <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-                            ${data.price} / Person
+                            £{data.price} / Person
                         </p>
                         </div>
                         </div>
@@ -48,7 +48,7 @@ const PackagePopular = () => {
                                 January 7 - January 9
                             </p>
                         </div>
-                        <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                        <p className="block h-28 font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
                         {data.desc}
                         </p>
                     </div>

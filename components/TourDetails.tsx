@@ -28,6 +28,7 @@ import { useUser } from '@clerk/nextjs'
 import { paidTour } from '@/lib/actions/user.actions'
 import { Loader2 } from 'lucide-react'
 import { Alert } from './ui/alert'
+import { packages } from '@/data'
 
 
 interface detailsPrototype{
@@ -36,11 +37,12 @@ interface detailsPrototype{
     iti: string[];
     gallery: string[];
     details: string; 
-    price:number; 
+    price:number;
+    packs: string[]
 }
 
 
-const TourDetails = ({ iti, gallery, details, price, packageType, duration }: detailsPrototype) => {
+const TourDetails = ({ iti, gallery, details, price, packageType, duration, packs }: detailsPrototype) => {
     const { user } = useUser();
     const [isLoading, setisLoading] = useState(false)
     const [showDetails, setShowDetails] = useState(true);
@@ -114,7 +116,7 @@ const formSchema = z.object({
                         role="tab">
                         Details
                     </button>
-                    <button 
+                    {/* <button 
                         onClick={() => handleTabChange('itinerary')} 
                         type="button" 
                         className={`hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-x-2 border-b-2 ${showItinerary ? 'border-blue-600 text-blue-600' : 'border-transparent text-gray-500'} hover:text-blue-600 focus:outline-none focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-blue-500`} 
@@ -122,7 +124,7 @@ const formSchema = z.object({
                         aria-selected={showItinerary}
                         role="tab">
                         Itinerary
-                    </button>
+                    </button> */}
                 </nav>
             </div>
 
@@ -132,9 +134,20 @@ const formSchema = z.object({
                     <p className="text-gray-500 dark:text-neutral-400 pb-5">
                         {details}
                     </p>
+                    <h1>Package Includes</h1>
+                    <ul className="list-disc pl-5">
+                        {
+                            packs.map((items, index) => (
+                                <li key={index} className="text-gray-500 dark:text-neutral-400 pb-5">
+                                    {items}
+                                </li>
+                            ))
+                        }
+                    </ul>
+                    
                     
                 </div>
-                <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'} pb-5 max-md:w-[90%]`}>
+                {/* <div id="tabs-with-underline-2" role="tabpanel" aria-labelledby="tabs-with-underline-item-2" className={`${showItinerary ? '' : 'hidden'} pb-5 max-md:w-[90%]`}>
                     {iti.map((dayObject, i) => {
                         const dayKey = `Day ${i+1}`;
                         const dayValue = dayObject;
@@ -145,7 +158,7 @@ const formSchema = z.object({
                             </div>
                         );
                     })}
-                </div>
+                </div> */}
                 <div id="tabs-with-underline-3" role="tabpanel" aria-labelledby="tabs-with-underline-item-3" className={`${showGallery ? '' : 'hidden'}`}>
                     {gallery.map((photo, i) => (
                         <div key={i}>
@@ -203,7 +216,7 @@ const formSchema = z.object({
                                 render={({ field }) => (
                                 <div className="form-item">
                                         <FormLabel className="form-label mb-1">
-                                            Total Amount (USD)
+                                            Total Amount (GBP)
                                         </FormLabel>
                                         <div className="flex flex-col w-full">
                                             <FormControl>

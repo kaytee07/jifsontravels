@@ -41,7 +41,7 @@ const MyTours = () => {
                     </li>
                     <li className="flex items-center gap-4"> 
                         <p className="text-slate-500">
-                        Total amount: ${data.totalamt}
+                        Total amount: £{data.totalamt}
                         </p>
                     </li>
                     <li className="flex items-center gap-4"> 

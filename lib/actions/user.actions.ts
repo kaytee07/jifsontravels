@@ -16,7 +16,7 @@ interface PaidTourProps {
 
 export const paidTour = async (data: PaidTourProps) => {
     const apiKey = process.env.CURRCONVERTER_API_KEY
-    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/USD/GHS`
+    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/GBP/GHS`
     try {
         const response = await fetch(url);
         var currency = await response.json();
@@ -35,7 +35,8 @@ export const paidTour = async (data: PaidTourProps) => {
         });
         
          const paystackPaymentAPI = transaction.data.authorization_url || "Can't get API";
-         if(paystackPaymentAPI){
+         console.log(paystackPaymentAPI)
+         if(transaction.status){
             await sendMail({
                 to: email,
                 name: name ?? "sir/madam",
