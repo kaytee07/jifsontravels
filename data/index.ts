@@ -55,11 +55,13 @@ export const packages = [
     {
         name: "The Cape Coast Tour",
         price: "250",
+        duration: "1 day tour",
         desc: " A visit to the Cape Coast Castle were we will learn and discover the history behind why Cape coasts Castle was built and how it connects to the indigens of Cape Coast, the Central region and the country as a whole.",
         img: "/img/7dc7379cff48e842b95acf37763d7f00.jpg"
     },
     {
         name: "Tamale Tour",
+        duration: "3 days tour",
         price: "700",
         desc: " A visit to Mole National Park in the Northern region of Ghana. ",
         img: "/img/1.jpg"
@@ -70,7 +72,7 @@ export const packages = [
 export const packageDetails = {
     "tamaletour": {
         name:"TAMALE TOUR",
-        duration: "January 7 - January 9",
+        duration: "3 days tour",
         price: 700,
         imgUrl:"/img/1.jpg",
         packs: ['All meals + bottled water', 'Round trip air ticket', ' ⁠Hotel Pick up and Drop off', '⁠Private Tour Guide', 'Pictures and Videos of the whole tour', '⁠All applicable tax/fees', 'Accomodation', '⁠Airconditioned Car'],
@@ -96,7 +98,7 @@ export const packageDetails = {
     },
     "thecapecoasttour": {
         name:"The Cape Coast Tour",
-        duration: "January 7 - January 9",
+        duration: "1 day tour",
         price: 250,
         imgUrl:"/img/7dc7379cff48e842b95acf37763d7f00.jpg",
         packs: ['Breakfast/ Lunch/ Snacks with bottled water.', 'Air conditioned Vehicle', ' ⁠All Fees included', '⁠Private Tour Guide', 'Pictures and Videos of the whole tour', 'Wi-Fi on board', 'Hotel Pick up and Drop off.'],

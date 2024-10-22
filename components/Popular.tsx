@@ -48,7 +48,7 @@ const Popular = () => {
                                     <path d="M3 10h18"/>
                             </svg>
                             <p className="block font-sans text-sm antialiased font-normal leading-normal text-[#ff8041] opacity-75">
-                                January 7 - January 9
+                                {data.duration}
                             </p>
                         </div>
                         <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">

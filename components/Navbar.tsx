@@ -9,6 +9,7 @@ import { useUser } from "@clerk/nextjs";
 
 const Navbar = () => {
     const { isSignedIn, user } = useUser();
+    
   return (
     <header className='flex flex-row justify-between items-center py-4 px-10'>
         <div className="logo">

@@ -18,14 +18,14 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
                   <ul className="text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">JifsonJoyTravels</a>
+                          <a href="https://jifsonjoytravelsgh.com/" className="hover:underline">JifsonJoyTravels</a>
                       </li>
                       <li>
-                          <a href="https://tailwindcss.com/" className="hover:underline">Tour Packages</a>
+                          <a href="https://jifsonjoytravelsgh.com/package" className="hover:underline">Tour Packages</a>
                       </li>
                   </ul>
               </div>
-              <div>
+              {/* <div>
                   <h2 className="mb-6 text-sm font-semibol uppercase text-white">Follow us</h2>
                   <ul className="text-gray-400 font-medium">
                       <li className="mb-4">
@@ -46,7 +46,7 @@ const Footer = () => {
                           <a href="#" className="hover:underline">Terms &amp; Conditions</a>
                       </li>
                   </ul>
-              </div>
+              </div> */}
           </div>
       </div>
       <hr className="my-6 sm:mx-aut border-gray-700 lg:my-8" />

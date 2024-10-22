@@ -35,7 +35,6 @@ export const paidTour = async (data: PaidTourProps) => {
         });
         
          const paystackPaymentAPI = transaction.data.authorization_url || "Can't get API";
-         console.log(paystackPaymentAPI)
          if(transaction.status){
             await sendMail({
                 to: email,
@@ -43,7 +42,16 @@ export const paidTour = async (data: PaidTourProps) => {
                 subject: "PAYMENT SUCCESSFUL",
                 body: `
                 <p>Dear ${name},<p>
-                <p>Thank you for touring with us, your payment of USD ${totalAmt} which is GHS ${totalAmt * currency.conversion_rate} is successful.</br> further details will be contacted to you<p>
+                <p>Thank you for touring with us, your payment of  £${totalAmt} which is GHS ${totalAmt * currency.conversion_rate} is successful.</br> further details will be contacted to you via email<p>
+                `
+            })
+            await sendMail({
+                to: "jifsonjoytravels@gmail.com",
+                name: "CEO",
+                subject: "PAYMENT SUCCESSFUL",
+                body: `
+                <p>Dear CEO ,<p>
+                <p>${name} has paid £${totalAmt} for ${packageType}. his/her email is ${email} <p>
                 `
             })
 

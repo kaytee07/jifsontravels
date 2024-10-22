@@ -9,7 +9,6 @@ const Testionials = () => {
             {testimonials.map((data, i) => (
                 <div key={i} className="flex w-full p-4 max-w-lg flex-col rounded-lg bg-white shadow-sm border border-slate-200 my-6">
                     <div className="flex items-center gap-4 text-slate-800">
-                        <img src={data.imgUrl} alt="Tania Andrew" className="relative inline-block h-[58px] w-[58px] !rounded-full  object-cover object-center" />
                         <div className="flex w-full flex-col">
                         <div className="flex items-center justify-between">
                             <h5 className="text-xl font-semibold text-slate-800">
