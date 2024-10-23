@@ -11,7 +11,7 @@ type DayItinerary = {
 type Itinerary = DayItinerary[];
 
 type TourType = {
-  itinerary: Itinerary[]; // This should be an array of objects with dynamic keys
+ // This should be an array of objects with dynamic keys
   gallery: string[];    // This should be an array of strings representing image URLs
   details: string;      // This should be a string with the tour details
   packages: string[];
@@ -21,19 +21,15 @@ type TourType = {
 
 
 
-const PackageType = ({params}: {params: {packagetypes: string}}) => {
+const PackageType = async ({params}: {params: {packagetypes: string}}) => {
   let tourType = packageDetails[params.packagetypes as keyof typeof packageDetails]
-  console.log(tourType)
 
-    const flattenedItinerary = tourType.itinerary.flatMap(dayObj => 
-    Object.values(dayObj) // Extract values from each day object
-  );
 
   
   return (
     <main>
       <TourHero name={tourType.name} url={tourType.imgUrl}/>
-      <TourDetails packs={tourType.packs} iti={flattenedItinerary} gallery={tourType.gallery} details={tourType.details} duration={tourType.duration} packageType={tourType.name} price={tourType.price}/>
+      <TourDetails packs={tourType.packs}  gallery={tourType.gallery} details={tourType.details} duration={tourType.duration} packageType={tourType.name} price={tourType.price}/>
     </main>
   )
 }

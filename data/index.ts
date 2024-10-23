@@ -71,57 +71,49 @@ export const packages = [
 
 export const packageDetails = {
     "tamaletour": {
-        name:"TAMALE TOUR",
+        name:"Tamale Tour",
         duration: "3 days tour",
         price: 700,
         imgUrl:"/img/1.jpg",
         packs: ['All meals + bottled water', 'Round trip air ticket', ' ⁠Hotel Pick up and Drop off', '⁠Private Tour Guide', 'Pictures and Videos of the whole tour', '⁠All applicable tax/fees', 'Accomodation', '⁠Airconditioned Car'],
         details: "A visit to Mole National Park in the Northern region of Ghana. The Park is the largest wildlife refuge spot for elephants, buffaloes, antelopes and more. Trip will include a visit to the Larabunga mosque, mystic Stone and the Mognori Village. There will be lessons on how shea butter is processed locally.",
-        itinerary:[{
-                day1: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day2: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day3: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day4: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day5: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-
-        ],
         gallery:[]
     },
     "thecapecoasttour": {
-        name:"The Cape Coast Tour",
+        name:"Cape Coast Tour",
         duration: "1 day tour",
         price: 250,
         imgUrl:"/img/7dc7379cff48e842b95acf37763d7f00.jpg",
         packs: ['Breakfast/ Lunch/ Snacks with bottled water.', 'Air conditioned Vehicle', ' ⁠All Fees included', '⁠Private Tour Guide', 'Pictures and Videos of the whole tour', 'Wi-Fi on board', 'Hotel Pick up and Drop off.'],
         details: "A visit to the Cape Coast Castle were we will learn and discover the history behind why Cape coasts Castle was built and how it connects to the indigens of Cape Coast, the Central region and the country as a whole. We will also tour the Kakum National Park where we will have the Canopy Walk experience.",
-         itinerary:[{
-                day1: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day2: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day3: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day4: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-            {
-                day5: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
-            },
-
-        ],
         gallery:[]
     },
+    // "": {
+    //     name:"The Cape Coast Tour",
+    //     duration: "",
+    //     price: 250,
+    //     imgUrl:"/img/7dc7379cff48e842b95acf37763d7f00.jpg",
+    //     packs: ['Breakfast/ Lunch/ Snacks with bottled water.', 'Air conditioned Vehicle', ' ⁠All Fees included', '⁠Private Tour Guide', 'Pictures and Videos of the whole tour', 'Wi-Fi on board', 'Hotel Pick up and Drop off.'],
+    //     details: "A visit to the Cape Coast Castle were we will learn and discover the history behind why Cape coasts Castle was built and how it connects to the indigens of Cape Coast, the Central region and the country as a whole. We will also tour the Kakum National Park where we will have the Canopy Walk experience.",
+    //      itinerary:[{
+    //             day1: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
+    //         },
+    //         {
+    //             day2: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
+    //         },
+    //         {
+    //             day3: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
+    //         },
+    //         {
+    //             day4: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
+    //         },
+    //         {
+    //             day5: "hjhewu weygwyguwe uweruheugr hgsdguguydg gfufgfgweytgdyevc yuwyeygdy vhvcvtctd yqweygweygsdguyefsfgse"
+    //         },
+
+    //     ],
+    //     gallery:[]
+    // },
 }
 
 export const testimonials = [

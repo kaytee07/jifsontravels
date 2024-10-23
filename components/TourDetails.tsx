@@ -34,7 +34,6 @@ import { packages } from '@/data'
 interface detailsPrototype{
     duration: string;
     packageType:string; 
-    iti: string[];
     gallery: string[];
     details: string; 
     price:number;
@@ -42,7 +41,7 @@ interface detailsPrototype{
 }
 
 
-const TourDetails = ({ iti, gallery, details, price, packageType, duration, packs }: detailsPrototype) => {
+const TourDetails = ({ gallery, details, price, packageType, duration, packs }: detailsPrototype) => {
     const { user } = useUser();
     const [isLoading, setisLoading] = useState(false)
     const [showDetails, setShowDetails] = useState(true);
@@ -94,7 +93,13 @@ const formSchema = z.object({
             email: user?.emailAddresses[0].emailAddress,
             name: user?.firstName
         }
-       window.location.href = await paidTour(data)
+        console.log(duration);
+        sessionStorage.setItem("numofpersons", values.numofpersons);
+        sessionStorage.setItem("totalAmt", String(values.totalAmt));
+        sessionStorage.setItem("duration", String(duration));
+        sessionStorage.setItem("packageType", packageType);
+    
+       await paidTour(data)
     } catch (error) {
         
     } finally {
