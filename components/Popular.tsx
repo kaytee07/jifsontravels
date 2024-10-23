@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './ui/button'
 import { packages } from '@/data'
+import Link from 'next/link'
 
 const Popular = () => {
   return (
@@ -56,13 +57,13 @@ const Popular = () => {
                         </p>
                     </div>
                     <div className="p-6 pt-0">
-                        <a href={`/packages/${data.name.replace(/\s+/g, '').toLowerCase()}`}>
+                        <Link href={`/packages/${data.name.replace(/\s+/g, '').toLowerCase()}`}>
                         <button
                         className="align-middle select-none bg-[#ff8041] font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
                         type="button">
                                 Book Now
                         </button>`
-                        </a>
+                        </Link>
                  </div>
                 </div>
                 
@@ -70,9 +71,9 @@ const Popular = () => {
             ))}
             
         </div>
-        <a href="/packages">
+        <Link href="/packages">
         <Button className="my-10 w-32">View More</Button>
-        </a>
+        </Link>
     </div>
   )
 }

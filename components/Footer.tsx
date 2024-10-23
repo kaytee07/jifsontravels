@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -9,19 +10,19 @@ const Footer = () => {
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-               <a href="/">
+               <Link href="/">
                 <Image src="/logos/Logo1 White.png" width={150} height={40} alt="logo"/>
-            </a>
+            </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
                   <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
                   <ul className="text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://jifsonjoytravelsgh.com/" className="hover:underline">JifsonJoyTravels</a>
+                          <Link href="https://jifsonjoytravelsgh.com/" className="hover:underline">JifsonJoyTravels</Link>
                       </li>
                       <li>
-                          <a href="https://jifsonjoytravelsgh.com/package" className="hover:underline">Tour Packages</a>
+                          <Link href="https://jifsonjoytravelsgh.com/package" className="hover:underline">Tour Packages</Link>
                       </li>
                   </ul>
               </div>
@@ -29,10 +30,10 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-semibol uppercase text-white">Follow us</h2>
                   <ul className="text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">facebook</a>
+                          <Link href="https://github.com/themesberg/flowbite" className="hover:underline ">facebook</Link>
                       </li>
                       <li>
-                          <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">twitter</a>
+                          <Link href="https://discord.gg/4eeurUVvTy" className="hover:underline">twitter</Link>
                       </li>
                   </ul>
               </div>
@@ -40,10 +41,10 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-semibold text-white uppercasetext-white">Legal</h2>
                   <ul className=" text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="#" className="hover:underline">Privacy Policy</a>
+                          <Link href="#" className="hover:underline">Privacy Policy</Link>
                       </li>
                       <li>
-                          <a href="#" className="hover:underline">Terms &amp; Conditions</a>
+                          <Link href="#" className="hover:underline">Terms &amp; Conditions</Link>
                       </li>
                   </ul>
               </div> */}
@@ -51,10 +52,10 @@ const Footer = () => {
       </div>
       <hr className="my-6 sm:mx-aut border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-white  sm:text-centetext-gray-400">© 2024 <a href="https://flowbite.com/" className="hover:underline">Kaytee™</a>. All Rights Reserved.
+          <span className="text-sm text-white  sm:text-centetext-gray-400">© 2024 <Link href="https://flowbite.com/" className="hover:underline">Kaytee™</Link>. All Rights Reserved.
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
-              <a href="#" className="text-gray-500 hover:text-white">
+              <Link href="#" className="text-gray-500 hover:text-white">
                   <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -70,8 +71,8 @@ const Footer = () => {
                 </svg>
 
                   <span className="sr-only">Facebook page</span>
-              </a>
-              <a href="#" className="text-gray-500 hover:text-white ms-5">
+              </Link>
+              <Link href="#" className="text-gray-500 hover:text-white ms-5">
                   <svg
                     className="w-4 h-4"
                     aria-hidden="true"
@@ -87,7 +88,7 @@ const Footer = () => {
                     </svg>
 
                   <span className="sr-only">Twitter page</span>
-              </a>
+              </Link>
              
              
           </div>

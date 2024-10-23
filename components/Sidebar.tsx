@@ -60,21 +60,21 @@ export function SheetDemo() {
          <ul className="flex flex-col justify-around">
         {
             navigation.map((data, i) => (
-            <a key={i} href={data.url}>
+            <Link key={i} href={data.url}>
               <li className="navitems text-[#317670]" >{data.name}</li>
-            </a>
+            </Link>
           )
         )
         }
          {
                     isSignedIn && (
                             <>
-                            <a className="w-[6rem]" href='/mytours'>
+                            <Link className="w-[6rem]" href='/mytours'>
                              <li className="navitems flex items-center hover:border-b-2 hover:border-[#e8bd3b] text-[#317670]" >My tours</li>
-                            </a>
-                            <a className="w-[6rem]" href='history'>
+                            </Link>
+                            <Link className="w-[6rem]" href='history'>
                                     <li className="navitems flex items-center  hover:border-b-2 hover:border-[#e8bd3b] text-[#317670]" >History</li>
-                            </a>
+                            </Link>
                             </>
                         )
                 }
