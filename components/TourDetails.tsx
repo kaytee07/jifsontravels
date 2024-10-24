@@ -98,6 +98,9 @@ const formSchema = z.object({
         sessionStorage.setItem("totalAmt", String(values.totalAmt));
         sessionStorage.setItem("duration", String(duration));
         sessionStorage.setItem("packageType", packageType);
+        sessionStorage.setItem("userId", String(user?.id));
+        sessionStorage.setItem("email",     String(user?.emailAddresses[0].emailAddress));
+        sessionStorage.setItem("name", String(user?.firstName));
     
        await paidTour(data)
     } catch (error) {

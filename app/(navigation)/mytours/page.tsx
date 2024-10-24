@@ -23,31 +23,19 @@ const MyTours = () => {
   useEffect(() => {
     const reference = searchParams.get('reference');
 
+
     const verify = async (ref: string) => {
-      try {
-        const response = await fetch(`https://api.paystack.co/transaction/verify/${ref}`, {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
-            'Content-Type': 'application/json',
-          },
-        });
-        const data = await response.json();
-        if (response.ok) {
-          console.log('Transaction verified:', data.data);
           const storedAmount = sessionStorage.getItem("totalAmt");
           const storedDuration = sessionStorage.getItem("duration");
           const storedPackageType = sessionStorage.getItem("packageType");
           const storedNumOfPersons = sessionStorage.getItem("numofpersons");
-          console.log(user?.id, user?.emailAddresses[0].emailAddress, user?.firstName);
-          saveData(storedAmount, storedDuration, storedPackageType, storedNumOfPersons, user?.id, user?.emailAddresses[0].emailAddress, user?.firstName);
-          // Handle successful verification (e.g., update the UI or state)
-        } else {
-          console.error('Verification failed:', data.message);
-        }
-      } catch (error) {
-        console.error('Error verifying transaction:', error);
-      }
+          const storedId = sessionStorage.getItem("userId");
+          const storedEmail = sessionStorage.getItem("email")
+          
+          const storedName = sessionStorage.getItem("name");
+        
+          saveData(storedAmount, storedDuration, storedPackageType, storedNumOfPersons, storedId, storedEmail, storedName, ref);
+      
     }
 
     const fetchTours = async () => {
@@ -59,7 +47,7 @@ const MyTours = () => {
 
     if (reference) verify(reference);
     fetchTours();
-  }, [user?.id, user?.emailAddresses, user?.firstName]);
+  }, [user?.id]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[50vh]">
