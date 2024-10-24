@@ -39,7 +39,7 @@ export const paidTour = async (data: PaidTourProps) => {
         var transaction = await paystack.transaction.initialize({
             email: email,
             amount: (totalAmt * 100) * currency.conversion_rate,
-            callback_url: `https://www.jifsonjoytravelsgh.com/`
+            callback_url: `https://www.jifsonjoytravelsgh.com/mytours`
         });
         if (!transaction.data.authorization_url) {
         throw new Error('Authorization URL is missing');
@@ -71,7 +71,7 @@ export const saveData = async (totalAmt:string|null, duration:string|null, packa
             await sendMail({
                 to: email || undefined,
                 name: name ?? "sir/madam",
-                subject: "PAYMENT SUCCESSFUL",
+                subject: "PAYMENT SUCCESSFUL*",
                 body: `
                 <p>Dear ${name},<p>
                 <p>Thank you for touring with us, your payment of  £${totalAmt} which is GHS ${Number(totalAmt) * currency.conversion_rate} is successful.</br> further details will be contacted to you via email<p>
