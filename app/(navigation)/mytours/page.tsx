@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { Loader2 } from 'lucide-react';
+import { useRef } from 'react';
 
 
 type Tour = {
@@ -19,23 +20,40 @@ const MyTours = () => {
   const [myTours, setMyTours] = useState<Tour[]>([]);
   const searchParams = useSearchParams();
   const references = searchParams.get('reference');
+  const hasRun = useRef(false);
 
   useEffect(() => {
+    if (hasRun.current) return;
+    hasRun.current = true;
     const reference = searchParams.get('reference');
 
-
     const verify = async (ref: string) => {
+        console.log(sessionStorage.getItem("paystack"))
+      try {
+        const response = await fetch(`https://api.paystack.co/transaction/verify/${ref}`, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("paystack")}`,
+            'Content-Type': 'application/json',
+          },
+        });
+        const data = await response.json();
+        if (response.ok) {
           const storedAmount = sessionStorage.getItem("totalAmt");
           const storedDuration = sessionStorage.getItem("duration");
           const storedPackageType = sessionStorage.getItem("packageType");
           const storedNumOfPersons = sessionStorage.getItem("numofpersons");
           const storedId = sessionStorage.getItem("userId");
-          const storedEmail = sessionStorage.getItem("email")
-          
+          const storedEmail = sessionStorage.getItem("email");
           const storedName = sessionStorage.getItem("name");
-        
-          saveData(storedAmount, storedDuration, storedPackageType, storedNumOfPersons, storedId, storedEmail, storedName, ref);
-      
+          saveData(storedAmount, storedDuration, storedPackageType, storedNumOfPersons, storedId, storedEmail, storedName);
+          // Handle successful verification (e.g., update the UI or state)
+        } else {
+          console.error('Verification failed:', data.message);
+        }
+      } catch (error) {
+        console.error('Error verifying transaction:', error);
+      } 
     }
 
     const fetchTours = async () => {
@@ -47,6 +65,7 @@ const MyTours = () => {
 
     if (reference) verify(reference);
     fetchTours();
+
   }, [user?.id]);
 
   return (

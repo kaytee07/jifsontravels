@@ -25,7 +25,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from "zod"
 import { useUser } from '@clerk/nextjs'
-import { paidTour } from '@/lib/actions/user.actions'
+import { getStack, paidTour } from '@/lib/actions/user.actions'
 import { Loader2 } from 'lucide-react'
 import { Alert } from './ui/alert'
 import { packages } from '@/data'
@@ -93,7 +93,7 @@ const formSchema = z.object({
             email: user?.emailAddresses[0].emailAddress,
             name: user?.firstName
         }
-        console.log(duration);
+        
         sessionStorage.setItem("numofpersons", values.numofpersons);
         sessionStorage.setItem("totalAmt", String(values.totalAmt));
         sessionStorage.setItem("duration", String(duration));
@@ -101,8 +101,15 @@ const formSchema = z.object({
         sessionStorage.setItem("userId", String(user?.id));
         sessionStorage.setItem("email",     String(user?.emailAddresses[0].emailAddress));
         sessionStorage.setItem("name", String(user?.firstName));
+
+        let pays = await getStack();
+        sessionStorage.setItem("paystack", String(pays));
+        
+        
+        await paidTour(data)
     
-       await paidTour(data)
+    
+     
     } catch (error) {
         
     } finally {

@@ -19,6 +19,8 @@ const lobster = Lobster({
 const Hero = () => {
 const {isSignedIn, user} = useUser();
 
+
+
   return (
     <div className={`w-full flex justify-center`}>
     <div
