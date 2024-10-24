@@ -28,7 +28,7 @@ const MyTours = () => {
         const response = await fetch(`https://api.paystack.co/transaction/verify/${ref}`, {
           method: 'GET',
           headers: {
-            Authorization: `Bearer ${"sk_test_190f9b5c28089532e6706600d36fd8cf98fabdb4"}`,
+            Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
             'Content-Type': 'application/json',
           },
         });
@@ -59,7 +59,7 @@ const MyTours = () => {
 
     if (reference) verify(reference);
     fetchTours();
-  }, [user, references]);
+  }, [user?.id, user?.emailAddresses, user?.firstName]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[50vh]">

@@ -35,11 +35,12 @@ export const paidTour = async (data: PaidTourProps) => {
         var transaction = await paystack.transaction.initialize({
             email: email,
             amount: (totalAmt * 100) * currency.conversion_rate,
-            callback_url: `http://localhost:3000/mytours`
+            callback_url: `https://www.jifsonjoytravelsgh.com//mytours`
         });
-        console.log(paystackPaymentAPI)
-        
-         var paystackPaymentAPI = transaction.data.authorization_url || "Can't get API";
+        if (!transaction.data.authorization_url) {
+        throw new Error('Authorization URL is missing');
+        }
+        var paystackPaymentAPI = transaction.data.authorization_url;
          
         
     } catch (error) {
@@ -52,9 +53,8 @@ export const paidTour = async (data: PaidTourProps) => {
 }
 
 export const saveData = async (totalAmt:string|null, duration:string|null, packageType:string|null, numofpersons:string|null, userId:string|undefined, email:string|undefined, name: string| null | undefined) => {
-    if (totalAmt){
-
-    
+    if (!userId || !email) return
+    if (totalAmt){   
             const apiKey = process.env.CURRCONVERTER_API_KEY
             const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/GBP/GHS`
                 try {
