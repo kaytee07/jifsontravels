@@ -4,6 +4,7 @@ import { connectToDB } from "../database/database";
 import Tours from "@/models/tours";
 import { sendMail } from "../mail";
 import { redirect } from "next/navigation";
+import { date } from "zod";
 
 
 
@@ -39,7 +40,7 @@ export const paidTour = async (data: PaidTourProps) => {
         var transaction = await paystack.transaction.initialize({
             email: email,
             amount: (totalAmt * 100) * currency.conversion_rate,
-            callback_url: `https://www.jifsonjoytravelsgh.com/mytours`
+            callback_url: `http://localhost:3000/mytours`
         });
         if (!transaction.data.authorization_url) {
         throw new Error('Authorization URL is missing');
@@ -58,7 +59,7 @@ export const paidTour = async (data: PaidTourProps) => {
     
 }
 
-export const saveData = async (totalAmt:string|null, duration:string|null, packageType:string|null, numofpersons:string|null, userId:string|null, email:string|null, name: string| null | undefined) => {
+export const saveData = async (totalAmt:string|null, duration:string|null, packageType:string|null, numofpersons:string|null, userId:string|null, email:string|null, name: string| null | undefined, date: string|null) => {
     if (totalAmt){   
             const apiKey = process.env.CURRCONVERTER_API_KEY
             const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/GBP/GHS`
@@ -90,6 +91,7 @@ export const saveData = async (totalAmt:string|null, duration:string|null, packa
                 userId: userId,
                 totalamt: totalAmt,
                 duration: duration,
+                date: date,
                 email: email,
                 numofpersons: numofpersons,
                 packagetype: packageType

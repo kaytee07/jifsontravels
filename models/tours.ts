@@ -1,6 +1,11 @@
 import { Schema, models, model } from "mongoose";
+import { date } from "zod";
 
 const tourSchema = new Schema({
+    date: {
+        type: String,
+        required: true
+    },
     numofpersons: {
         type: String,
         required: true
@@ -27,5 +32,5 @@ const tourSchema = new Schema({
     }
 }, {timestamps: true})
 
-const Tours = models.Tours || model("Tours", tourSchema);
+const Tours =  model("Toura", tourSchema);
 export default Tours;

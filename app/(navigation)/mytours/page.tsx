@@ -13,6 +13,7 @@ type Tour = {
   totalamt: number;
   packagetype: string;
   duration: string;
+  date: string;
 };
 
 const MyTours = () => {
@@ -46,7 +47,9 @@ const MyTours = () => {
           const storedId = sessionStorage.getItem("userId");
           const storedEmail = sessionStorage.getItem("email");
           const storedName = sessionStorage.getItem("name");
-          saveData(storedAmount, storedDuration, storedPackageType, storedNumOfPersons, storedId, storedEmail, storedName);
+          const storedDate = sessionStorage.getItem("date");
+          console.log(storedDate)
+          saveData(storedAmount, storedDuration, storedPackageType, storedNumOfPersons, storedId, storedEmail, storedName, storedDate);
           // Handle successful verification (e.g., update the UI or state)
         } else {
           console.error('Verification failed:', data.message);
@@ -105,6 +108,11 @@ const MyTours = () => {
                     <li className="flex items-center gap-4">
                       <p className="text-slate-500">
                         Duration: {data.duration}
+                      </p>
+                    </li>
+                    <li className="flex items-center gap-4">
+                      <p className="text-slate-500">
+                        Day: {data.date ? data.date : 0}
                       </p>
                     </li>
                   </ul>

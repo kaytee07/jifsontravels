@@ -118,7 +118,7 @@ const formSchema = z.object({
         sessionStorage.setItem("userId", String(user?.id));
         sessionStorage.setItem("email",     String(user?.emailAddresses[0].emailAddress));
         sessionStorage.setItem("name", String(user?.firstName));
-        sessionStorage.setItem("date", String(user?.firstName));
+        sessionStorage.setItem("date", String(values.date));
 
         let pays = await getStack();
         sessionStorage.setItem("paystack", String(pays));
@@ -271,6 +271,7 @@ const formSchema = z.object({
                                         <div className="flex flex-col w-full">
                                             <FormControl>
                                                 <Input
+                                                min={1}
                                                     type="number"
                                                     placeholder="number of persons"
                                                     className="input-class"
