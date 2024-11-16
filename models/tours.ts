@@ -32,5 +32,5 @@ const tourSchema = new Schema({
     }
 }, {timestamps: true})
 
-const Tours =  model("Toura", tourSchema);
+const Tours =  models.Toura || model("Toura", tourSchema);
 export default Tours;

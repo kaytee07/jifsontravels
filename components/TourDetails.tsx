@@ -118,7 +118,7 @@ const formSchema = z.object({
         sessionStorage.setItem("userId", String(user?.id));
         sessionStorage.setItem("email",     String(user?.emailAddresses[0].emailAddress));
         sessionStorage.setItem("name", String(user?.firstName));
-        sessionStorage.setItem("date", String(values.date));
+        sessionStorage.setItem("date", String(values.date.toDateString()));
 
         let pays = await getStack();
         sessionStorage.setItem("paystack", String(pays));

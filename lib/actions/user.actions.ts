@@ -40,7 +40,7 @@ export const paidTour = async (data: PaidTourProps) => {
         var transaction = await paystack.transaction.initialize({
             email: email,
             amount: (totalAmt * 100) * currency.conversion_rate,
-            callback_url: `http://localhost:3000/mytours`
+            callback_url: `https://www.jifsonjoytravelsgh.com/mytours`
         });
         if (!transaction.data.authorization_url) {
         throw new Error('Authorization URL is missing');
@@ -75,7 +75,7 @@ export const saveData = async (totalAmt:string|null, duration:string|null, packa
                 subject: "PAYMENT SUCCESSFUL*",
                 body: `
                 <p>Dear ${name},<p>
-                <p>Thank you for touring with us, your payment of  £${totalAmt} which is GHS ${Number(totalAmt) * currency.conversion_rate} is successful.</br> further details will be contacted to you via email<p>
+                <p>Thank you for touring with us, your payment of  £${totalAmt} which is GHS ${Number(totalAmt) * currency.conversion_rate} is successful. Your tour starts on ${date} and it's a ${duration}</br> further details will be contacted to you via email<p>
                 `
             })
             await sendMail({
@@ -84,7 +84,7 @@ export const saveData = async (totalAmt:string|null, duration:string|null, packa
                 subject: "PAYMENT SUCCESSFUL",
                 body: `
                 <p>Dear CEO ,<p>
-                <p>${name} has paid £${totalAmt} for ${packageType}. his/her email is ${email} <p>
+                <p>${name} has paid £${totalAmt} for ${packageType}. his/her email is ${email} <p> tour starts on ${date}
                 `
             })
              await Tours.create({
