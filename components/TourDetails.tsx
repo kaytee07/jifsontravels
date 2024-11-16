@@ -23,12 +23,24 @@ import {
 import { Input } from "@/components/ui/input"
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from "zod"
+import { date, z } from "zod"
 import { useUser } from '@clerk/nextjs'
 import { getStack, paidTour } from '@/lib/actions/user.actions'
 import { Loader2 } from 'lucide-react'
 import { Alert } from './ui/alert'
 import { packages } from '@/data'
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 
 interface detailsPrototype{
@@ -58,6 +70,9 @@ const TourDetails = ({ gallery, details, price, packageType, duration, packs }: 
 
  
 const formSchema = z.object({
+  date:z.date({
+    required_error: "A date of birth is required.",
+  }),
   numofpersons: z.string(),
   totalAmt: z.number()
 });
@@ -66,6 +81,7 @@ const formSchema = z.object({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      date: new Date(),
       numofpersons: "",
       totalAmt: 0,
     },
@@ -84,6 +100,7 @@ const formSchema = z.object({
     setisLoading(true);
     try {
         if (!user) window.location.href = "/sign-in"
+        alert(values.date)
         const data = {
             numofpersons: values.numofpersons,
             totalAmt: values.totalAmt,
@@ -101,6 +118,7 @@ const formSchema = z.object({
         sessionStorage.setItem("userId", String(user?.id));
         sessionStorage.setItem("email",     String(user?.emailAddresses[0].emailAddress));
         sessionStorage.setItem("name", String(user?.firstName));
+        sessionStorage.setItem("date", String(user?.firstName));
 
         let pays = await getStack();
         sessionStorage.setItem("paystack", String(pays));
@@ -203,6 +221,47 @@ const formSchema = z.object({
                             <div className="grid gap-4 py-4">
                             <FormField
                                 control={form.control}
+                                name="date"
+                                render={({ field }) => (
+                                <div className="form-item">
+                                    <FormLabel className="form-label mb-1">Pick a Date</FormLabel>
+                                    <div className="flex flex-col w-full">
+                                    <DropdownMenu>
+                                        <DropdownMenuTrigger asChild>
+                                        <FormControl>
+                                            <Button
+                                            variant="outline"
+                                            className={`w-[240px] pl-3 text-left font-normal ${
+                                                !field.value ? "text-muted-foreground" : ""
+                                            }`}
+                                            >
+                                            {field.value ? (
+                                                format(field.value, "PPP") // Format the Date to a readable string
+                                            ) : (
+                                                <span>Pick a date</span> // Placeholder text
+                                            )}
+                                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                            </Button>
+                                        </FormControl>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent className="w-auto p-0" align="start">
+                                        <Calendar
+                                            mode="single"
+                                            selected={field.value} // Use field.value directly for selected date
+                                            onSelect={field.onChange} // Update the field value on date selection
+                                            disabled={(date) => date < new Date()}
+                                            initialFocus
+                                        />
+                                        </DropdownMenuContent>
+                                        </DropdownMenu>
+                                            <FormMessage
+                                                className="form-message mt-2"/>
+                                        </div>
+                                </div>
+                                )}
+                                />
+                            <FormField
+                                control={form.control}
                                 name="numofpersons"
                                 render={({ field }) => (
                                 <div className="form-item">
@@ -231,7 +290,7 @@ const formSchema = z.object({
                                 render={({ field }) => (
                                 <div className="form-item">
                                         <FormLabel className="form-label mb-1">
-                                            Total Amount (GBP)
+                                            Total Amount (6)
                                         </FormLabel>
                                         <div className="flex flex-col w-full">
                                             <FormControl>
