@@ -100,7 +100,6 @@ const formSchema = z.object({
     setisLoading(true);
     try {
         if (!user) window.location.href = "/sign-in"
-        alert(values.date)
         const data = {
             numofpersons: values.numofpersons,
             totalAmt: values.totalAmt,
@@ -108,7 +107,8 @@ const formSchema = z.object({
             packageType,
             userId: user?.id,
             email: user?.emailAddresses[0].emailAddress,
-            name: user?.firstName
+            name: user?.firstName,
+            date: String(values.date.toDateString())
         }
         
         sessionStorage.setItem("numofpersons", values.numofpersons);
@@ -123,13 +123,25 @@ const formSchema = z.object({
         let pays = await getStack();
         sessionStorage.setItem("paystack", String(pays));
         
-        
-        await paidTour(data)
-    
-    
+
+        const response = await fetch('/api/paystack/create-checkout-session', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify(data)
+        });
+
+        const info = await response.json();
+        if (info.authorizationUrl) {
+            window.location.href = info.authorizationUrl;
+        } else {
+            console.error('Error: No authorization URL received');
+            alert('check if details provided are correct');
+        }
      
     } catch (error) {
-        
+        console.error(error);
     } finally {
         setisLoading(false)
     }
@@ -291,7 +303,7 @@ const formSchema = z.object({
                                 render={({ field }) => (
                                 <div className="form-item">
                                         <FormLabel className="form-label mb-1">
-                                            Total Amount (6)
+                                            Total Amount (£)
                                         </FormLabel>
                                         <div className="flex flex-col w-full">
                                             <FormControl>

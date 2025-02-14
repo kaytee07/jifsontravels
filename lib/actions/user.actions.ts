@@ -4,7 +4,6 @@ import { connectToDB } from "../database/database";
 import Tours from "@/models/tours";
 import { sendMail } from "../mail";
 import { redirect } from "next/navigation";
-import { date } from "zod";
 
 
 
@@ -36,11 +35,11 @@ export const paidTour = async (data: PaidTourProps) => {
         await connectToDB();
         
         const {totalAmt, email} = data;
-        console.log(data)
         var transaction = await paystack.transaction.initialize({
             email: email,
             amount: (totalAmt * 100) * currency.conversion_rate,
-            callback_url: `https://www.jifsonjoytravelsgh.com/mytours`
+            callback_url: `https://www.jifsonjoytravelsgh.com/mytours`,
+         
         });
         if (!transaction.data.authorization_url) {
         throw new Error('Authorization URL is missing');
